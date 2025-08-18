@@ -10,30 +10,24 @@
       padding: 30px;
       background-color: #f0f8ff;
     }
+
     h1 {
       color: #333;
-    }
-    .team-button {
-      margin: 10px;
-      padding: 10px 20px;
-      font-size: 16px;
-      background-color: #87cefa;
-      border: none;
-      border-radius: 5px;
-      cursor: pointer;
-      transition: background-color 0.3s;
-    }
-    .team-button:hover {
-      background-color: #00bfff;
+      text-align: center;
+      margin-bottom: 40px;
     }
 
-    .team-list {
-      margin-top: 20px;
-      padding: 15px;
-      border-radius: 8px;
-      color: #fff;
-      display: none;
-      animation: fadeIn 0.5s ease-in-out;
+    .team-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+    }
+
+    .team-card {
+      padding: 20px;
+      border-radius: 10px;
+      color: white;
+      animation: fadeIn 0.6s ease-in-out;
     }
 
     .team1 { background-color: #ff7f50; } /* 班1：コーラル */
@@ -42,13 +36,22 @@
     .team4 { background-color: #ffa500; } /* 班4：オレンジ */
     .team5 { background-color: #20b2aa; } /* 班5：ライトシーグリーン */
 
+    .team-card h2 {
+      margin-top: 0;
+      font-size: 20px;
+      border-bottom: 1px solid rgba(255,255,255,0.5);
+      padding-bottom: 5px;
+    }
+
     ul {
       list-style-type: none;
       padding-left: 0;
+      margin-top: 10px;
     }
+
     li {
-      margin: 5px 0;
-      font-size: 18px;
+      margin: 6px 0;
+      font-size: 16px;
     }
 
     @keyframes fadeIn {
@@ -61,82 +64,68 @@
         transform: translateY(0);
       }
     }
+
+    @media (max-width: 600px) {
+      .team-card {
+        font-size: 14px;
+        padding: 15px;
+      }
+    }
   </style>
 </head>
 <body>
-  <h1>キャンプメンバー表</h1>
+  <h1>🌿 キャンプメンバー表</h1>
 
-  <!-- ボタン -->
-  <div>
-    <button class="team-button" onclick="toggleTeam('team1')">班1</button>
-    <button class="team-button" onclick="toggleTeam('team2')">班2</button>
-    <button class="team-button" onclick="toggleTeam('team3')">班3</button>
-    <button class="team-button" onclick="toggleTeam('team4')">班4</button>
-    <button class="team-button" onclick="toggleTeam('team5')">班5</button>
+  <div class="team-container">
+    <div class="team-card team1">
+      <h2>班1</h2>
+      <ul>
+        <li>山田 太郎</li>
+        <li>佐藤 花子</li>
+        <li>鈴木 一郎</li>
+        <li>田中 美咲</li>
+      </ul>
+    </div>
+
+    <div class="team-card team2">
+      <h2>班2</h2>
+      <ul>
+        <li>中村 健</li>
+        <li>高橋 優</li>
+        <li>小林 翼</li>
+        <li>加藤 未来</li>
+      </ul>
+    </div>
+
+    <div class="team-card team3">
+      <h2>班3</h2>
+      <ul>
+        <li>井上 陽</li>
+        <li>松本 彩</li>
+        <li>山口 海</li>
+        <li>石田 空</li>
+      </ul>
+    </div>
+
+    <div class="team-card team4">
+      <h2>班4</h2>
+      <ul>
+        <li>森田 光</li>
+        <li>藤田 涼</li>
+        <li>岡田 翔</li>
+        <li>島田 結</li>
+      </ul>
+    </div>
+
+    <div class="team-card team5">
+      <h2>班5</h2>
+      <ul>
+        <li>西村 陽子</li>
+        <li>大野 陸</li>
+        <li>村上 晴</li>
+        <li>青木 空</li>
+      </ul>
+    </div>
   </div>
-
-  <!-- メンバー表示 -->
-  <div id="team1" class="team-list team1">
-    <strong>班1</strong>
-    <ul>
-      <li>山田 太郎</li>
-      <li>佐藤 花子</li>
-      <li>鈴木 一郎</li>
-      <li>田中 美咲</li>
-    </ul>
-  </div>
-
-  <div id="team2" class="team-list team2">
-    <strong>班2</strong>
-    <ul>
-      <li>中村 健</li>
-      <li>高橋 優</li>
-      <li>小林 翼</li>
-      <li>加藤 未来</li>
-    </ul>
-  </div>
-
-  <div id="team3" class="team-list team3">
-    <strong>班3</strong>
-    <ul>
-      <li>井上 陽</li>
-      <li>松本 彩</li>
-      <li>山口 海</li>
-      <li>石田 空</li>
-    </ul>
-  </div>
-
-  <div id="team4" class="team-list team4">
-    <strong>班4</strong>
-    <ul>
-      <li>森田 光</li>
-      <li>藤田 涼</li>
-      <li>岡田 翔</li>
-      <li>島田 結</li>
-    </ul>
-  </div>
-
-  <div id="team5" class="team-list team5">
-    <strong>班5</strong>
-    <ul>
-      <li>西村 陽子</li>
-      <li>大野 陸</li>
-      <li>村上 晴</li>
-      <li>青木 空</li>
-    </ul>
-  </div>
-
-  <script>
-    function toggleTeam(teamId) {
-      const teams = document.querySelectorAll('.team-list');
-      teams.forEach(team => {
-        if (team.id === teamId) {
-          team.style.display = (team.style.display === 'block') ? 'none' : 'block';
-        } else {
-          team.style.display = 'none';
-        }
-      });
-    }
-  </script>
 </body>
 </html>
