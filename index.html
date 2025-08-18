@@ -3,17 +3,45 @@
 <head>
   <meta charset="UTF-8">
   <title>サークル合宿情報</title>
+  <style>
+    body { font-family: sans-serif; padding: 20px; }
+    .section { margin-bottom: 20px; }
+    .content { display: none; margin-top: 10px; }
+    button { padding: 8px 16px; font-size: 16px; }
+  </style>
 </head>
 <body>
-  <h1>2025年 夏合宿のお知らせ</h1>
-  <p>📅 日程：8月25日〜8月28日</p>
-  <p>📍 場所：長野県〇〇キャンプ場</p>
-  <h2>持ち物リスト</h2>
-  <ul>
-    <li>着替え</li>
-    <li>タオル</li>
-    <li>虫よけスプレー</li>
-    <li>懐中電灯</li>
-  </ul>
+  <h1>🌻 サークル合宿 2025</h1>
+
+  <div class="section">
+    <button onclick="toggleContent('schedule')">📅 日程を見る</button>
+    <div id="schedule" class="content">
+      <p>8月25日（月）〜 8月28日（木）</p>
+      <p>場所：長野県〇〇キャンプ場</p>
+    </div>
+  </div>
+
+  <div class="section">
+    <button onclick="toggleContent('items')">🎒 持ち物リストを見る</button>
+    <div id="items" class="content">
+      <ul>
+        <li>着替え</li>
+        <li>タオル</li>
+        <li>虫よけスプレー</li>
+        <li>懐中電灯</li>
+      </ul>
+    </div>
+  </div>
+
+  <script>
+    function toggleContent(id) {
+      const content = document.getElementById(id);
+      if (content.style.display === "none") {
+        content.style.display = "block";
+      } else {
+        content.style.display = "none";
+      }
+    }
+  </script>
 </body>
 </html>
