@@ -1,35 +1,56 @@
-<!DOCTYPE html>
-<html lang="ja">
-<head>
-  <meta charset="UTF-8">
-  <title>詳しい日程</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <style>
-    body {
-      font-family: 'M PLUS Rounded 1c', sans-serif;
-      padding: 30px;
-      background-color: #f0f8ff;
-    }
-    h1 {
-      color: #333;
-    }
-    ul {
-      line-height: 1.8;
-    }
-  </style>
-</head>
-<body>
-  <h1>📅 秋合宿 詳細スケジュール</h1>
-  <ul>
-    <li>10月25日（土）10:00 集合 → バス出発</li>
-    <li>12:00 キャンプ場到着 → 昼食</li>
-    <li>14:00 アクティビティ開始</li>
-    <li>18:00 BBQ & キャンプファイヤー</li>
-    <li>22:00 就寝</li>
-    <li>10月26日（日）08:00 朝食</li>
-    <li>10:00 自由時間</li>
-    <li>12:00 昼食 → 片付け</li>
-    <li>14:00 出発 → 16:00 解散</li>
-  </ul>
-</body>
-</html>
+<h2>🗓️ 旅のしおり</h2>
+
+<div class="schedule-section">
+  <h3>DAY1</h3>
+  <table class="schedule-table">
+    <tr><th>時間</th><th>内容</th></tr>
+    <tr><td>9:00</td><td>新幹線乗車</td></tr>
+    <tr><td>10:00</td><td>現地到着</td></tr>
+    <tr><td>11:00</td><td>ランチ</td></tr>
+    <tr><td>15:00</td><td>観光</td></tr>
+    <tr><td>18:00</td><td>夕食</td></tr>
+    <tr><td>20:00</td><td>宿泊</td></tr>
+  </table>
+</div>
+
+<div class="schedule-section">
+  <h3>DAY2</h3>
+  <table class="schedule-table">
+    <tr><th>時間</th><th>内容</th></tr>
+    <tr><td>7:00</td><td>朝食</td></tr>
+    <tr><td>8:30</td><td>観光地</td></tr>
+    <tr><td>11:00</td><td>ランチ</td></tr>
+    <tr><td>15:00</td><td>観光地、買い物</td></tr>
+    <tr><td>18:00</td><td>帰宅</td></tr>
+  </table>
+</div>
+.schedule-section {
+  margin-bottom: 40px;
+  background-color: rgba(255, 255, 255, 0.2);
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.schedule-section h3 {
+  font-size: 20px;
+  margin-bottom: 10px;
+  color: #fff;
+}
+
+.schedule-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.schedule-table th,
+.schedule-table td {
+  border: 1px solid white;
+  padding: 10px;
+  text-align: center;
+  background-color: rgba(255, 255, 255, 0.1);
+  color: white;
+}
+
+.schedule-table th {
+  background-color: rgba(255, 255, 255, 0.3);
+}
