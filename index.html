@@ -20,7 +20,6 @@
     }
 
     .content {
-      display: none;
       margin-top: 10px;
       background-color: rgba(0, 0, 0, 0.5);
       padding: 15px;
@@ -28,30 +27,23 @@
       overflow-x: auto;
     }
 
-    button {
+    a.button {
+      display: inline-block;
       background-color: #88b04b;
       color: white;
-      border: none;
+      text-decoration: none;
       padding: 12px 24px;
       font-size: 16px;
       border-radius: 30px;
       box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
-      cursor: pointer;
       transition: background-color 0.3s ease;
       width: 100%;
       max-width: 300px;
+      text-align: center;
     }
 
-    button:hover {
+    a.button:hover {
       background-color: #6f9e3d;
-    }
-
-    ul {
-      padding-left: 20px;
-    }
-
-    li {
-      margin-bottom: 5px;
     }
 
     table {
@@ -80,7 +72,7 @@
         font-size: 14px;
       }
 
-      button {
+      a.button {
         font-size: 14px;
         padding: 10px 20px;
       }
@@ -95,16 +87,16 @@
   <h1>🌿 秋合宿 2025</h1>
 
   <div class="section">
-    <button onclick="toggleContent('schedule')">📅 日程を見る</button>
-    <div id="schedule" class="content">
+    <a href="schedule.html" class="button">📅 詳しい日程を見る</a>
+    <div class="content">
       <p>10月25日（土）〜 10月26日（日）</p>
       <p>場所：山梨県〇〇キャンプ場</p>
     </div>
   </div>
 
   <div class="section">
-    <button onclick="toggleContent('items')">🎒 持ち物リストを見る</button>
-    <div id="items" class="content">
+    <a href="items.html" class="button">🎒 持ち物チェックリストへ</a>
+    <div class="content">
       <ul>
         <li>着替え</li>
         <li>タオル</li>
@@ -115,7 +107,7 @@
   </div>
 
   <div class="section">
-    <button onclick="toggleContent('members')">👥 メンバー表を見る</button>
+    <a href="members.html" class="button">👥 メンバー表を見る</a>
     <div id="members" class="content">
       <table>
         <thead>
@@ -145,12 +137,5 @@
       </table>
     </div>
   </div>
-
-  <script>
-    function toggleContent(id) {
-      const content = document.getElementById(id);
-      content.style.display = (content.style.display === "none" || content.style.display === "") ? "block" : "none";
-    }
-  </script>
 </body>
 </html>
