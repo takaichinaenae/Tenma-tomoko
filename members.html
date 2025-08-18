@@ -1,1 +1,114 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>メンバー表</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      font-family: 'M PLUS Rounded 1c', sans-serif;
+      padding: 30px;
+      background-color: #f0f8ff;
+    }
+    h1 {
+      color: #333;
+    }
+    .team-button {
+      margin: 10px;
+      padding: 10px 20px;
+      font-size: 16px;
+      background-color: #87cefa;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    .team-list {
+      margin-top: 20px;
+      display: none;
+      padding: 10px;
+      background-color: #fff;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+    ul {
+      list-style-type: none;
+      padding-left: 0;
+    }
+    li {
+      margin: 5px 0;
+    }
+  </style>
+</head>
+<body>
+  <h1>キャンプメンバー表</h1>
 
+  <!-- ボタン -->
+  <div>
+    <button class="team-button" onclick="toggleTeam('team1')">班1</button>
+    <button class="team-button" onclick="toggleTeam('team2')">班2</button>
+    <button class="team-button" onclick="toggleTeam('team3')">班3</button>
+    <button class="team-button" onclick="toggleTeam('team4')">班4</button>
+    <button class="team-button" onclick="toggleTeam('team5')">班5</button>
+  </div>
+
+  <!-- メンバー表示 -->
+  <div id="team1" class="team-list">
+    <strong>班1</strong>
+    <ul>
+      <li>山田 太郎</li>
+      <li>佐藤 花子</li>
+      <li>鈴木 一郎</li>
+      <li>田中 美咲</li>
+    </ul>
+  </div>
+
+  <div id="team2" class="team-list">
+    <strong>班2</strong>
+    <ul>
+      <li>中村 健</li>
+      <li>高橋 優</li>
+      <li>小林 翼</li>
+      <li>加藤 未来</li>
+    </ul>
+  </div>
+
+  <div id="team3" class="team-list">
+    <strong>班3</strong>
+    <ul>
+      <li>井上 陽</li>
+      <li>松本 彩</li>
+      <li>山口 海</li>
+      <li>石田 空</li>
+    </ul>
+  </div>
+
+  <div id="team4" class="team-list">
+    <strong>班4</strong>
+    <ul>
+      <li>森田 光</li>
+      <li>藤田 涼</li>
+      <li>岡田 翔</li>
+      <li>島田 結</li>
+    </ul>
+  </div>
+
+  <div id="team5" class="team-list">
+    <strong>班5</strong>
+    <ul>
+      <li>西村 陽子</li>
+      <li>大野 陸</li>
+      <li>村上 晴</li>
+      <li>青木 空</li>
+    </ul>
+  </div>
+
+  <script>
+    function toggleTeam(teamId) {
+      const teams = document.querySelectorAll('.team-list');
+      teams.forEach(team => {
+        team.style.display = (team.id === teamId && team.style.display !== 'block') ? 'block' : 'none';
+      });
+    }
+  </script>
+</body>
+</html>
