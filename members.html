@@ -8,13 +8,16 @@
     body {
       font-family: 'M PLUS Rounded 1c', sans-serif;
       padding: 30px;
-      background-color: #f0f8ff;
+      margin: 0;
+      background: linear-gradient(135deg, #e6f2e6 0%, #f9fff9 100%);
+      background-attachment: fixed;
     }
 
     h1 {
-      color: #333;
+      color: #2f4f4f;
       text-align: center;
       margin-bottom: 40px;
+      font-size: 28px;
     }
 
     .team-container {
@@ -25,16 +28,17 @@
 
     .team-card {
       padding: 20px;
-      border-radius: 10px;
-      color: white;
+      border-radius: 12px;
+      background-color: rgba(60, 179, 113, 0.85); /* ミディアムシーグリーン + 透明感 */
+      color: #fff;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
       animation: fadeIn 0.6s ease-in-out;
+      transition: transform 0.3s ease;
     }
 
-    .team1 { background-color: #ff7f50; } /* 班1：コーラル */
-    .team2 { background-color: #6a5acd; } /* 班2：スレートブルー */
-    .team3 { background-color: #3cb371; } /* 班3：ミディアムシーグリーン */
-    .team4 { background-color: #ffa500; } /* 班4：オレンジ */
-    .team5 { background-color: #20b2aa; } /* 班5：ライトシーグリーン */
+    .team-card:hover {
+      transform: scale(1.03);
+    }
 
     .team-card h2 {
       margin-top: 0;
@@ -77,7 +81,7 @@
   <h1>🌿 キャンプメンバー表</h1>
 
   <div class="team-container">
-    <div class="team-card team1">
+    <div class="team-card">
       <h2>班1</h2>
       <ul>
         <li>山田 太郎</li>
@@ -87,7 +91,7 @@
       </ul>
     </div>
 
-    <div class="team-card team2">
+    <div class="team-card">
       <h2>班2</h2>
       <ul>
         <li>中村 健</li>
@@ -97,7 +101,7 @@
       </ul>
     </div>
 
-    <div class="team-card team3">
+    <div class="team-card">
       <h2>班3</h2>
       <ul>
         <li>井上 陽</li>
@@ -107,7 +111,7 @@
       </ul>
     </div>
 
-    <div class="team-card team4">
+    <div class="team-card">
       <h2>班4</h2>
       <ul>
         <li>森田 光</li>
@@ -117,7 +121,7 @@
       </ul>
     </div>
 
-    <div class="team-card team5">
+    <div class="team-card">
       <h2>班5</h2>
       <ul>
         <li>西村 陽子</li>
