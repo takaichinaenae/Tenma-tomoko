@@ -21,21 +21,45 @@
       border: none;
       border-radius: 5px;
       cursor: pointer;
+      transition: background-color 0.3s;
     }
+    .team-button:hover {
+      background-color: #00bfff;
+    }
+
     .team-list {
       margin-top: 20px;
+      padding: 15px;
+      border-radius: 8px;
+      color: #fff;
       display: none;
-      padding: 10px;
-      background-color: #fff;
-      border: 1px solid #ccc;
-      border-radius: 5px;
+      animation: fadeIn 0.5s ease-in-out;
     }
+
+    .team1 { background-color: #ff7f50; } /* 班1：コーラル */
+    .team2 { background-color: #6a5acd; } /* 班2：スレートブルー */
+    .team3 { background-color: #3cb371; } /* 班3：ミディアムシーグリーン */
+    .team4 { background-color: #ffa500; } /* 班4：オレンジ */
+    .team5 { background-color: #20b2aa; } /* 班5：ライトシーグリーン */
+
     ul {
       list-style-type: none;
       padding-left: 0;
     }
     li {
       margin: 5px 0;
+      font-size: 18px;
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(10px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
     }
   </style>
 </head>
@@ -52,7 +76,7 @@
   </div>
 
   <!-- メンバー表示 -->
-  <div id="team1" class="team-list">
+  <div id="team1" class="team-list team1">
     <strong>班1</strong>
     <ul>
       <li>山田 太郎</li>
@@ -62,7 +86,7 @@
     </ul>
   </div>
 
-  <div id="team2" class="team-list">
+  <div id="team2" class="team-list team2">
     <strong>班2</strong>
     <ul>
       <li>中村 健</li>
@@ -72,7 +96,7 @@
     </ul>
   </div>
 
-  <div id="team3" class="team-list">
+  <div id="team3" class="team-list team3">
     <strong>班3</strong>
     <ul>
       <li>井上 陽</li>
@@ -82,7 +106,7 @@
     </ul>
   </div>
 
-  <div id="team4" class="team-list">
+  <div id="team4" class="team-list team4">
     <strong>班4</strong>
     <ul>
       <li>森田 光</li>
@@ -92,7 +116,7 @@
     </ul>
   </div>
 
-  <div id="team5" class="team-list">
+  <div id="team5" class="team-list team5">
     <strong>班5</strong>
     <ul>
       <li>西村 陽子</li>
@@ -106,7 +130,11 @@
     function toggleTeam(teamId) {
       const teams = document.querySelectorAll('.team-list');
       teams.forEach(team => {
-        team.style.display = (team.id === teamId && team.style.display !== 'block') ? 'block' : 'none';
+        if (team.id === teamId) {
+          team.style.display = (team.style.display === 'block') ? 'none' : 'block';
+        } else {
+          team.style.display = 'none';
+        }
       });
     }
   </script>
