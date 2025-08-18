@@ -1,15 +1,17 @@
 <!DOCTYPE html>
-<html>
+<html lang="ja">
 <head>
   <meta charset="UTF-8">
   <title>サークル合宿情報</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c&display=swap" rel="stylesheet">
   <style>
     body {
-      background-image: url('https://images.unsplash.com/photo-1506744038136-46273834b3fb');
+      background-image: url('https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1600&q=80');
       background-size: cover;
       background-position: center;
       color: white;
-      font-family: sans-serif;
+      font-family: 'M PLUS Rounded 1c', sans-serif;
       padding: 40px;
     }
 
@@ -20,30 +22,77 @@
     .content {
       display: none;
       margin-top: 10px;
-      background-color: rgba(0,0,0,0.5);
+      background-color: rgba(0, 0, 0, 0.5);
       padding: 15px;
       border-radius: 10px;
+      overflow-x: auto;
     }
 
     button {
-      background-color: #ff7f50;
+      background-color: #88b04b;
       color: white;
       border: none;
       padding: 12px 24px;
       font-size: 16px;
       border-radius: 30px;
-      box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
       cursor: pointer;
       transition: background-color 0.3s ease;
+      width: 100%;
+      max-width: 300px;
     }
 
     button:hover {
-      background-color: #ff4500;
+      background-color: #6f9e3d;
+    }
+
+    ul {
+      padding-left: 20px;
+    }
+
+    li {
+      margin-bottom: 5px;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 10px;
+    }
+
+    th, td {
+      border: 1px solid white;
+      padding: 10px;
+      text-align: left;
+    }
+
+    th {
+      background-color: rgba(255, 255, 255, 0.2);
+    }
+
+    td {
+      background-color: rgba(255, 255, 255, 0.1);
+    }
+
+    @media (max-width: 600px) {
+      body {
+        padding: 20px;
+        font-size: 14px;
+      }
+
+      button {
+        font-size: 14px;
+        padding: 10px 20px;
+      }
+
+      th, td {
+        padding: 8px;
+      }
     }
   </style>
 </head>
 <body>
-  <h1>🌻 サークル合宿 2025</h1>
+  <h1>🌿 サークル合宿 2025</h1>
 
   <div class="section">
     <button onclick="toggleContent('schedule')">📅 日程を見る</button>
@@ -65,14 +114,42 @@
     </div>
   </div>
 
+  <div class="section">
+    <button onclick="toggleContent('members')">👥 メンバー表を見る</button>
+    <div id="members" class="content">
+      <table>
+        <thead>
+          <tr>
+            <th>名前</th>
+            <th>役割</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>春菜</td>
+            <td>リーダー</td>
+          </tr>
+          <tr>
+            <td>健太</td>
+            <td>会計</td>
+          </tr>
+          <tr>
+            <td>美咲</td>
+            <td>食材担当</td>
+          </tr>
+          <tr>
+            <td>翔太</td>
+            <td>交通手配</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
   <script>
     function toggleContent(id) {
       const content = document.getElementById(id);
-      if (content.style.display === "none") {
-        content.style.display = "block";
-      } else {
-        content.style.display = "none";
-      }
+      content.style.display = (content.style.display === "none" || content.style.display === "") ? "block" : "none";
     }
   </script>
 </body>
