@@ -7,31 +7,52 @@
   <style>
     body {
       font-family: 'M PLUS Rounded 1c', sans-serif;
-      padding: 30px;
+      margin: 0;
+      padding: 40px;
+      background-image: url("https://www.heropatterns.com/static/media/plus.1c9e3e4d.svg");
+      background-size: 300px;
       background-color: #fff8dc;
     }
+
     h1 {
       color: #444;
+      text-align: center;
+      margin-bottom: 30px;
     }
+
+    .checklist-box {
+      background-color: rgba(255, 255, 255, 0.95);
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      padding: 30px;
+      max-width: 500px;
+      margin: 0 auto;
+    }
+
     label {
       display: block;
-      margin: 10px 0;
+      margin: 12px 0;
       font-size: 18px;
+      cursor: pointer;
     }
+
     input[type="checkbox"] {
       margin-right: 10px;
+      transform: scale(1.2);
     }
   </style>
 </head>
 <body>
   <h1>🎒 持ち物チェックリスト</h1>
-  <form>
-    <label><input type="checkbox"> 着替え</label>
-    <label><input type="checkbox"> タオル</label>
-    <label><input type="checkbox"> 虫よけスプレー</label>
-    <label><input type="checkbox"> 懐中電灯</label>
-    <label><input type="checkbox"> 歯ブラシ・洗面用具</label>
-    <label><input type="checkbox"> 雨具（カッパ・折りたたみ傘）</label>
-  </form>
+  <div class="checklist-box">
+    <form>
+      <label><input type="checkbox"> 着替え</label>
+      <label><input type="checkbox"> タオル</label>
+      <label><input type="checkbox"> 虫よけスプレー</label>
+      <label><input type="checkbox"> 懐中電灯</label>
+      <label><input type="checkbox"> 歯ブラシ・洗面用具</label>
+      <label><input type="checkbox"> 雨具（カッパ・折りたたみ傘）</label>
+    </form>
+  </div>
 </body>
 </html>
