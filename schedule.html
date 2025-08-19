@@ -13,6 +13,12 @@
       background-image: url("https://www.heropatterns.com/static/media/plus.1c9e3e4d.svg");
       background-size: 300px;
       background-color: #fef8e7;
+      animation: fadeInBody 1.5s ease-in;
+    }
+
+    @keyframes fadeInBody {
+      from { opacity: 0; }
+      to { opacity: 1; }
     }
 
     h2 {
@@ -20,6 +26,12 @@
       font-size: 28px;
       color: #444;
       margin-bottom: 20px;
+      animation: slideDown 1s ease-out;
+    }
+
+    @keyframes slideDown {
+      from { transform: translateY(-30px); opacity: 0; }
+      to { transform: translateY(0); opacity: 1; }
     }
 
     .button-group {
@@ -36,11 +48,12 @@
       font-size: 16px;
       border-radius: 8px;
       cursor: pointer;
-      transition: background-color 0.3s ease;
+      transition: transform 0.3s ease, background-color 0.3s ease;
     }
 
     .toggle-btn:hover {
       background-color: #6f9440;
+      transform: translateY(-2px);
     }
 
     .card {
@@ -53,10 +66,13 @@
       margin-left: auto;
       margin-right: auto;
       display: none;
+      opacity: 0;
+      transition: opacity 0.6s ease;
     }
 
     .card.active {
       display: block;
+      opacity: 1;
     }
 
     .card h3 {
@@ -97,6 +113,16 @@
       background-color: #f0f8e8;
     }
 
+    .emoji {
+      display: inline-block;
+      animation: floatEmoji 2s ease-in-out infinite;
+    }
+
+    @keyframes floatEmoji {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-5px); }
+    }
+
     .photo-box {
       text-align: center;
       margin-top: 20px;
@@ -106,6 +132,12 @@
       max-width: 100%;
       border-radius: 10px;
       box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+      animation: pulsePhoto 4s ease-in-out infinite;
+    }
+
+    @keyframes pulsePhoto {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.03); }
     }
   </style>
 </head>
@@ -122,12 +154,12 @@
     <h3>DAY1 スケジュール</h3>
     <table class="schedule-table">
       <tr><th>時間</th><th>内容</th></tr>
-      <tr><td>9:00</td><td>🚄 新宿駅出発</td></tr>
-      <tr><td>10:00</td><td>📍 温泉地到着</td></tr>
-      <tr><td>11:00</td><td>🗺️ 観光</td></tr>
-      <tr><td>12:00</td><td>🍽️ ランチ</td></tr>
-      <tr><td>15:00</td><td>🏨 宿にチェックイン</td></tr>
-      <tr><td>18:00</td><td>🍱 夕食</td></tr>
+      <tr><td>9:00</td><td><span class="emoji">🚄</span> 新宿駅出発</td></tr>
+      <tr><td>10:00</td><td><span class="emoji">📍</span> 温泉地到着</td></tr>
+      <tr><td>11:00</td><td><span class="emoji">🗺️</span> 観光</td></tr>
+      <tr><td>12:00</td><td><span class="emoji">🍽️</span> ランチ</td></tr>
+      <tr><td>15:00</td><td><span class="emoji">🏨</span> 宿にチェックイン</td></tr>
+      <tr><td>18:00</td><td><span class="emoji">🍱</span> 夕食</td></tr>
     </table>
     <div class="photo-box">
       <img src="https://source.unsplash.com/800x500/?onsen,japan" alt="温泉地の写真">
@@ -138,12 +170,12 @@
     <h3>DAY2 スケジュール</h3>
     <table class="schedule-table">
       <tr><th>時間</th><th>内容</th></tr>
-      <tr><td>7:00</td><td>🍳 朝食</td></tr>
-      <tr><td>8:30</td><td>🏞️ 宿出発</td></tr>
-      <tr><td>11:00</td><td>🗺️ 観光</td></tr>
-      <tr><td>12:00</td><td>🍽️ ランチ</td></tr>
-      <tr><td>15:00</td><td>♨️ 温泉地到着</td></tr>
-      <tr><td>16:00</td><td>🚃 帰宅</td></tr>
+      <tr><td>7:00</td><td><span class="emoji">🍳</span> 朝食</td></tr>
+      <tr><td>8:30</td><td><span class="emoji">🏞️</span> 宿出発</td></tr>
+      <tr><td>11:00</td><td><span class="emoji">🗺️</span> 観光</td></tr>
+      <tr><td>12:00</td><td><span class="emoji">🍽️</span> ランチ</td></tr>
+      <tr><td>15:00</td><td><span class="emoji">♨️</span> 温泉地到着</td></tr>
+      <tr><td>16:00</td><td><span class="emoji">🚃</span> 帰宅</td></tr>
     </table>
     <div class="photo-box">
       <img src="https://source.unsplash.com/800x500/?travel,japan" alt="旅の風景">
