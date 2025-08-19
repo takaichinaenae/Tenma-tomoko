@@ -13,6 +13,14 @@
       background-image: url("https://www.heropatterns.com/static/media/plus.1c9e3e4d.svg");
       background-size: 300px;
       background-color: #fff8dc;
+      transition: background-image 1s ease, background-color 1s ease;
+    }
+
+    body.ready {
+      background-image: url("https://www.pentafan.com/upimage/pentafan02921016_Thumb1.jpg"); 
+      background-size: cover;
+      background-position: center;
+      background-color: #000;
     }
 
     h1 {
@@ -56,35 +64,10 @@
       background-color: #f5f5f5;
       text-decoration: line-through;
     }
-
-    /* プレートのスタイル */
-    .complete-message {
-      position: fixed;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%) scale(0.8);
-      background-color: #fffae0;
-      color: #444;
-      border: 2px solid #f0c040;
-      padding: 20px 40px;
-      border-radius: 20px;
-      font-size: 24px;
-      font-weight: bold;
-      box-shadow: 0 8px 20px rgba(0,0,0,0.2);
-      opacity: 0;
-      pointer-events: none;
-      z-index: 1000;
-      transition: opacity 0.6s ease, transform 0.6s ease;
-    }
-
-    .complete-message.show {
-      opacity: 1;
-      transform: translate(-50%, -50%) scale(1);
-    }
   </style>
 </head>
 <body>
-  <h1>🎒 持ち物</h1>
+  <h1>🎒 持ち物チェックリスト</h1>
   <div class="checklist-box">
     <form id="checklist-form">
       <label><input type="checkbox" data-item="着替え"> 着替え</label>
@@ -96,13 +79,9 @@
     </form>
   </div>
 
-  <!-- プレート -->
-  <div id="complete-message" class="complete-message">✨ 準備ばっちり！ ✨</div>
-
   <script>
     const form = document.getElementById('checklist-form');
     const checkboxes = form.querySelectorAll('input[type="checkbox"]');
-    const message = document.getElementById('complete-message');
 
     // 初期化：保存された状態を復元
     window.addEventListener('load', () => {
@@ -134,13 +113,13 @@
       });
     });
 
-    // 全てチェックされているか確認
+    // 全てチェックされているか確認して背景変更
     function checkAllStatus() {
       const allChecked = Array.from(checkboxes).every(cb => cb.checked);
       if (allChecked) {
-        message.classList.add('show');
+        document.body.classList.add('ready');
       } else {
-        message.classList.remove('show');
+        document.body.classList.remove('ready');
       }
     }
   </script>
