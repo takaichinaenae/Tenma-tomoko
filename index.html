@@ -1,42 +1,44 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ja">
 <head>
   <meta charset="UTF-8">
-  <title>Autumn Camp Circle</title>
+  <title>Autumn Camp 2025</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <!-- Autumn風フォント -->
-  <link href="https://fonts.googleapis.com/css2?family=Autumn&display=swap" rel="stylesheet">
+  <!-- 手書き風フォント -->
+  <link href="https://fonts.googleapis.com/css2?family=Caveat&display=swap" rel="stylesheet">
   <style>
     body {
-      background-image: url('https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1600&q=80');
-      background-size: cover;
-      background-position: center;
-      color: white;
-      font-family: 'Autumn', cursive;
-      padding: 40px;
+      margin: 0;
+      font-family: 'M PLUS Rounded 1c', sans-serif;
+      background-color: #fef1f5;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      overflow: hidden;
     }
 
     h1 {
-      font-size: 48px;
-      margin-bottom: 30px;
-      text-shadow: 2px 2px 4px rgba(0,0,0,0.4);
-    }
-
-    .section {
+      font-family: 'Caveat', cursive;
+      font-size: 64px;
+      color: #3a6edc;
       margin-bottom: 40px;
+      animation: fadeIn 1.5s ease forwards;
     }
 
-    .content {
-      margin-top: 12px;
-      background-color: rgba(0, 0, 0, 0.5);
-      padding: 16px;
-      border-radius: 12px;
-      overflow-x: auto;
+    .button-group {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+      opacity: 0;
+      transform: translateY(30px);
+      animation: fadeInUp 1.5s ease forwards 1.5s;
     }
 
     a.button {
-      display: inline-block;
-      background-color: #a3bce2;
+      background-color: #88b04b;
       color: white;
       text-decoration: none;
       padding: 14px 28px;
@@ -44,106 +46,42 @@
       border-radius: 30px;
       box-shadow: 0 4px 6px rgba(0,0,0,0.2);
       transition: background-color 0.3s ease;
-      width: 100%;
-      max-width: 300px;
-      text-align: center;
-      font-family: 'Autumn', cursive;
     }
 
     a.button:hover {
-      background-color: #6f9edc;
+      background-color: #6f9e3d;
     }
 
-    table {
-      width: 100%;
-      border-collapse: collapse;
-      margin-top: 10px;
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(-20px); }
+      to { opacity: 1; transform: translateY(0); }
     }
 
-    th, td {
-      border: 1px solid white;
-      padding: 10px;
-      text-align: left;
-    }
-
-    th {
-      background-color: rgba(255, 255, 255, 0.2);
-    }
-
-    td {
-      background-color: rgba(255, 255, 255, 0.1);
+    @keyframes fadeInUp {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
     }
 
     @media (max-width: 600px) {
-      body {
-        padding: 20px;
-        font-size: 14px;
+      h1 {
+        font-size: 40px;
       }
 
       a.button {
         font-size: 16px;
         padding: 12px 24px;
       }
-
-      th, td {
-        padding: 8px;
-      }
     }
   </style>
 </head>
 <body>
-  <h1>🍁 Autumn Camp 2025</h1>
-
-  <div class="section">
-    <a href="schedule.html" class="button">📅 Schedule</a>
-    <div class="content">
-      <p>Oct 25 (Sat) – Oct 26 (Sun)</p>
-      <p>Location: Yamanashi Campground</p>
-    </div>
-  </div>
-
-  <div class="section">
-    <a href="items.html" class="button">🎒 Packing List</a>
-    <div class="content">
-      <ul>
-        <li>Clothes</li>
-        <li>Towel</li>
-        <li>Bug Spray</li>
-        <li>Flashlight</li>
-      </ul>
-    </div>
-  </div>
-
-  <div class="section">
-    <a href="members.html" class="button">👥 Members</a>
-    <div class="content">
-      <table>
-        <thead>
-          <tr>
-            <th>Name</th>
-            <th>Role</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>Haruna</td>
-            <td>Leader</td>
-          </tr>
-          <tr>
-            <td>Kenta</td>
-            <td>Treasurer</td>
-          </tr>
-          <tr>
-            <td>Misaki</td>
-            <td>Food Coordinator</td>
-          </tr>
-          <tr>
-            <td>Shota</td>
-            <td>Transport Manager</td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
+  <h1>Autumn</h1>
+  <div class="button-group">
+    <a href="schedule.html" class="button">📅 日程を見る</a>
+    <a href="items.html" class="button">🎒 持ち物チェック</a>
+    <a href="members.html" class="button">👥 メンバー表</a>
   </div>
 </body>
 </html>
