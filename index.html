@@ -2,104 +2,29 @@
 <html lang="ja">
 <head>
   <meta charset="UTF-8">
-  <title>サークル合宿情報</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c&display=swap" rel="stylesheet">
-  <style>
-    body {
-      background-image: url('https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1600&q=80');
-      background-size: cover;
-      background-position: center;
-      color: white;
-      font-family: 'M PLUS Rounded 1c', sans-serif;
-      padding: 40px;
-    }
-
-    .section {
-      margin-bottom: 30px;
-    }
-
-    .content {
-      margin-top: 10px;
-      background-color: rgba(0, 0, 0, 0.5);
-      padding: 15px;
-      border-radius: 10px;
-      overflow-x: auto;
-    }
-
-    a.button {
-      display: inline-block;
-      background-color: #88b04b;
-      color: white;
-      text-decoration: none;
-      padding: 12px 24px;
-      font-size: 16px;
-      border-radius: 30px;
-      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
-      transition: background-color 0.3s ease;
-      width: 100%;
-      max-width: 300px;
-      text-align: center;
-    }
-
-    a.button:hover {
-      background-color: #6f9e3d;
-    }
-
-    table {
-      width: 100%;
-      border-collapse: collapse;
-      margin-top: 10px;
-    }
-
-    th, td {
-      border: 1px solid white;
-      padding: 10px;
-      text-align: left;
-    }
-
-    th {
-      background-color: rgba(255, 255, 255, 0.2);
-    }
-
-    td {
-      background-color: rgba(255, 255, 255, 0.1);
-    }
-
-    @media (max-width: 600px) {
-      body {
-        padding: 20px;
-        font-size: 14px;
-      }
-
-      a.button {
-        font-size: 14px;
-        padding: 10px 20px;
-      }
-
-      th, td {
-        padding: 8px;
-      }
-    }
-  </style>
+  <title>Circle Camp 2025</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <h1>🌿 秋合宿 2025</h1>
-
-  <div class="section">
-    <a href="schedule.html" class="button">📅 詳しい日程を見る</a>
-    <div class="content">
-      <p>10月25日（土）〜 10月26日（日）</p>
-      <p>場所：山梨県〇〇キャンプ場</p>
+  <header class="hero">
+    <div class="hero-text">enjoy</div>
+    <div class="menu-icon" onclick="toggleMenu()">☰</div>
+    <div class="slideshow">
+      <img src="https://www.pentafan.com/upimage/pentafan02921016_Thumb1.jpg" class="slide active">
+      <img src="https://tse1.mm.bing.net/th/id/OIP.CdwxfcnM81XbTjauiQfbMQHaE7?rs=1&pid=ImgDetMain&o=7&rm=3" class="slide">
     </div>
-  </div>
+  </header>
 
-<div class="section">
-  <a href="items.html" class="button">🎒 持ち物</a>
-</div> 
+  <nav id="menu" class="menu hidden">
+    <ul>
+      <li><a href="#schedule">日程</a></li>
+      <li><a href="#checklist">持ち物</a></li>
+      <li><a href="#members">メンバー</a></li>
+    </ul>
+  </nav>
 
-<div class="section">
-  <a href="members.html" class="button">👥 メンバー</a>
-</div>  
+  <!-- 以下に各セクションを追加予定 -->
 </body>
+<script src="script.js"></script>
 </html>
