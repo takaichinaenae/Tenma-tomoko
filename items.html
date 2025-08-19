@@ -2,7 +2,7 @@
 <html lang="ja">
 <head>
   <meta charset="UTF-8">
-  <title>持ち物</title>
+  <title>持ち物チェック</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c&display=swap" rel="stylesheet">
   <style>
@@ -56,6 +56,31 @@
       background-color: #f5f5f5;
       text-decoration: line-through;
     }
+
+    /* プレートのスタイル */
+    .complete-message {
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%) scale(0.8);
+      background-color: #fffae0;
+      color: #444;
+      border: 2px solid #f0c040;
+      padding: 20px 40px;
+      border-radius: 20px;
+      font-size: 24px;
+      font-weight: bold;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+      opacity: 0;
+      pointer-events: none;
+      z-index: 1000;
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+
+    .complete-message.show {
+      opacity: 1;
+      transform: translate(-50%, -50%) scale(1);
+    }
   </style>
 </head>
 <body>
@@ -71,11 +96,15 @@
     </form>
   </div>
 
+  <!-- プレート -->
+  <div id="complete-message" class="complete-message">✨ 準備ばっちり！ ✨</div>
+
   <script>
     const form = document.getElementById('checklist-form');
     const checkboxes = form.querySelectorAll('input[type="checkbox"]');
+    const message = document.getElementById('complete-message');
 
-    // ページ読み込み時に保存された状態を復元
+    // 初期化：保存された状態を復元
     window.addEventListener('load', () => {
       checkboxes.forEach(cb => {
         const item = cb.getAttribute('data-item');
@@ -86,9 +115,10 @@
           label.classList.add('checked');
         }
       });
+      checkAllStatus();
     });
 
-    // チェック状態が変わったら保存＆スタイル変更
+    // チェック状態変更時の処理
     checkboxes.forEach(cb => {
       cb.addEventListener('change', () => {
         const item = cb.getAttribute('data-item');
@@ -100,8 +130,19 @@
           localStorage.setItem(`checklist-${item}`, 'unchecked');
           label.classList.remove('checked');
         }
+        checkAllStatus();
       });
     });
+
+    // 全てチェックされているか確認
+    function checkAllStatus() {
+      const allChecked = Array.from(checkboxes).every(cb => cb.checked);
+      if (allChecked) {
+        message.classList.add('show');
+      } else {
+        message.classList.remove('show');
+      }
+    }
   </script>
 </body>
 </html>
