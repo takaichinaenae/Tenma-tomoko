@@ -74,7 +74,34 @@
   </style>
 </head>
 <body>
-  <h1>Autumn</h1>
+  <!-- SVGで手書き風に描かれるAutumn -->
+<svg viewBox="0 0 600 150" width="100%" height="150">
+  <text x="50%" y="50%" text-anchor="middle" dominant-baseline="middle"
+        font-family="'Caveat', cursive" font-size="120" fill="none"
+        stroke="#3a6edc" stroke-width="2">
+    Autumn
+  </text>
+</svg>
+
+<style>
+  svg text {
+    stroke-dasharray: 1000;
+    stroke-dashoffset: 1000;
+    animation: drawAutumn 3s ease forwards;
+  }
+
+  @keyframes drawAutumn {
+    to {
+      stroke-dashoffset: 0;
+    }
+  }
+
+  @media (max-width: 600px) {
+    svg text {
+      font-size: 70px;
+    }
+  }
+</style>
   <div class="button-group">
     <a href="schedule.html" class="nav-link">📅 日程</a>
     <a href="items.html" class="nav-link">🎒 持ち物 List</a>
