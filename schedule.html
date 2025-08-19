@@ -19,7 +19,28 @@
       text-align: center;
       font-size: 28px;
       color: #444;
-      margin-bottom: 40px;
+      margin-bottom: 20px;
+    }
+
+    .button-group {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+
+    .toggle-btn {
+      background-color: #88b04b;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      margin: 0 10px;
+      font-size: 16px;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    .toggle-btn:hover {
+      background-color: #6f9440;
     }
 
     .card {
@@ -31,6 +52,11 @@
       max-width: 700px;
       margin-left: auto;
       margin-right: auto;
+      display: none;
+    }
+
+    .card.active {
+      display: block;
     }
 
     .card h3 {
@@ -70,13 +96,29 @@
     .schedule-table tr:hover td {
       background-color: #f0f8e8;
     }
+
+    .photo-box {
+      text-align: center;
+      margin-top: 20px;
+    }
+
+    .photo-box img {
+      max-width: 100%;
+      border-radius: 10px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+    }
   </style>
 </head>
 <body>
 
   <h2>旅のしおり</h2>
 
-  <div class="card">
+  <div class="button-group">
+    <button class="toggle-btn" onclick="showDay('day1')">DAY1</button>
+    <button class="toggle-btn" onclick="showDay('day2')">DAY2</button>
+  </div>
+
+  <div id="day1" class="card active">
     <h3>DAY1 スケジュール</h3>
     <table class="schedule-table">
       <tr><th>時間</th><th>内容</th></tr>
@@ -87,9 +129,12 @@
       <tr><td>15:00</td><td>🏨 宿にチェックイン</td></tr>
       <tr><td>18:00</td><td>🍱 夕食</td></tr>
     </table>
+    <div class="photo-box">
+      <img src="https://source.unsplash.com/800x500/?onsen,japan" alt="温泉地の写真">
+    </div>
   </div>
 
-  <div class="card">
+  <div id="day2" class="card">
     <h3>DAY2 スケジュール</h3>
     <table class="schedule-table">
       <tr><th>時間</th><th>内容</th></tr>
@@ -100,7 +145,19 @@
       <tr><td>15:00</td><td>♨️ 温泉地到着</td></tr>
       <tr><td>16:00</td><td>🚃 帰宅</td></tr>
     </table>
+    <div class="photo-box">
+      <img src="https://source.unsplash.com/800x500/?travel,japan" alt="旅の風景">
+    </div>
   </div>
+
+  <script>
+    function showDay(dayId) {
+      document.querySelectorAll('.card').forEach(card => {
+        card.classList.remove('active');
+      });
+      document.getElementById(dayId).classList.add('active');
+    }
+  </script>
 
 </body>
 </html>
