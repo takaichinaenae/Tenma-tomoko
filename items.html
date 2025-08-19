@@ -37,7 +37,7 @@
       cursor: pointer;
       padding: 8px 12px;
       border-radius: 8px;
-      transition: background-color 0.3s ease, transform 0.3s ease;
+      transition: background-color 0.3s ease, transform 0.3s ease, color 0.3s ease;
     }
 
     label:hover {
@@ -49,6 +49,12 @@
       margin-right: 10px;
       transform: scale(1.2);
       cursor: pointer;
+    }
+
+    label.checked {
+      color: #999;
+      background-color: #f5f5f5;
+      text-decoration: line-through;
     }
   </style>
 </head>
@@ -74,17 +80,26 @@
       checkboxes.forEach(cb => {
         const item = cb.getAttribute('data-item');
         const saved = localStorage.getItem(`checklist-${item}`);
+        const label = cb.parentElement;
         if (saved === 'checked') {
           cb.checked = true;
+          label.classList.add('checked');
         }
       });
     });
 
-    // チェック状態が変わったら保存
+    // チェック状態が変わったら保存＆スタイル変更
     checkboxes.forEach(cb => {
       cb.addEventListener('change', () => {
         const item = cb.getAttribute('data-item');
-        localStorage.setItem(`checklist-${item}`, cb.checked ? 'checked' : 'unchecked');
+        const label = cb.parentElement;
+        if (cb.checked) {
+          localStorage.setItem(`checklist-${item}`, 'checked');
+          label.classList.add('checked');
+        } else {
+          localStorage.setItem(`checklist-${item}`, 'unchecked');
+          label.classList.remove('checked');
+        }
       });
     });
   </script>
