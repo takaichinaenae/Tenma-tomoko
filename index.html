@@ -2,29 +2,95 @@
 <html lang="ja">
 <head>
   <meta charset="UTF-8">
+  <title>秋合宿 2025</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Circle Camp 2025</title>
-  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'M PLUS Rounded 1c', sans-serif;
+      background-color: #f5f5f5;
+    }
+
+    .hero {
+      position: relative;
+      height: 100vh;
+      background-image: url('https://images.unsplash.com/photo-1502082553048-f009c37129b9?auto=format&fit=crop&w=1600&q=80');
+      background-size: cover;
+      background-position: center;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      color: #fff;
+    }
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: linear-gradient(to bottom, rgba(0,0,0,0.3), rgba(0,0,0,0.6));
+      z-index: 1;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      max-width: 800px;
+      padding: 20px;
+    }
+
+    .hero h1 {
+      font-size: 48px;
+      margin-bottom: 20px;
+      letter-spacing: 2px;
+    }
+
+    .hero p {
+      font-size: 20px;
+      margin-bottom: 30px;
+    }
+
+    .hero a.button {
+      display: inline-block;
+      background-color: #88b04b;
+      color: white;
+      text-decoration: none;
+      padding: 14px 28px;
+      font-size: 18px;
+      border-radius: 30px;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+      transition: background-color 0.3s ease;
+    }
+
+    .hero a.button:hover {
+      background-color: #6f9e3d;
+    }
+
+    @media (max-width: 600px) {
+      .hero h1 {
+        font-size: 32px;
+      }
+
+      .hero p {
+        font-size: 16px;
+      }
+
+      .hero a.button {
+        font-size: 16px;
+        padding: 12px 24px;
+      }
+    }
+  </style>
 </head>
 <body>
-  <header class="hero">
-    <div class="hero-text">enjoy</div>
-    <div class="menu-icon" onclick="toggleMenu()">☰</div>
-    <div class="slideshow">
-      <img src="https://www.pentafan.com/upimage/pentafan02921016_Thumb1.jpg" class="slide active">
-      <img src="https://tse1.mm.bing.net/th/id/OIP.CdwxfcnM81XbTjauiQfbMQHaE7?rs=1&pid=ImgDetMain&o=7&rm=3" class="slide">
+  <section class="hero">
+    <div class="hero-content">
+      <h1>🌿 秋合宿 2025</h1>
+      <p>自然の中で、仲間と過ごす特別な2日間。<br>山梨の森で、心も体もリフレッシュ。</p>
+      <a href="schedule.html" class="button">📅 詳しい日程を見る</a>
     </div>
-  </header>
-
-  <nav id="menu" class="menu hidden">
-    <ul>
-      <li><a href="#schedule">日程</a></li>
-      <li><a href="#checklist">持ち物</a></li>
-      <li><a href="#members">メンバー</a></li>
-    </ul>
-  </nav>
-
-  <!-- 以下に各セクションを追加予定 -->
+  </section>
 </body>
-<script src="script.js"></script>
 </html>
