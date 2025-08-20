@@ -84,31 +84,25 @@
 </svg>
 
 <style>
-  svg text {
-    stroke-dasharray: 1000;
-    stroke-dashoffset: 1000;
-    animation: drawAutumn 3s ease forwards;
-  }
-
-  @keyframes drawAutumn {
-    to {
-      stroke-dashoffset: 0;
-    }
-  }
-
-  @media (max-width: 600px) {
-    svg text {
-      font-size: 70px;
-    }
-  }
-  body {
-  opacity: 0;
-  animation: fadeInPage 1.5s ease forwards;
+  .autumn-text {
+  fill: none;
+  stroke: #3a6edc;
+  stroke-width: 2;
+  stroke-dasharray: 700;
+  stroke-dashoffset: 700;
+  animation: drawText 2s ease forwards, fillText 1s ease 2s forwards;
 }
 
-@keyframes fadeInPage {
+@keyframes drawText {
   to {
-    opacity: 1;
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes fillText {
+  to {
+    fill: #3a6edc;
+    stroke: none;
   }
 }
 </style>
