@@ -4,141 +4,125 @@
   <meta charset="UTF-8">
   <title>旅のしおり</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c&display=swap" rel="stylesheet">
   <style>
     body {
-      font-family: 'Zen Maru Gothic', sans-serif;
+      font-family: 'M PLUS Rounded 1c', sans-serif;
       margin: 0;
       padding: 40px;
-      background-image: url("https://www.heropatterns.com/static/media/plus.1c9e3e4d.svg");
-      background-size: 300px;
+      background-image: url("https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1600&q=80");
+      background-size: cover;
+      background-position: center;
       background-color: #fef8e7;
       animation: fadeInBody 1.5s ease-in;
+      color: #333;
     }
 
     @keyframes fadeInBody {
-  from { opacity: 0; }
-  to { opacity: 1; }
-}
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
 
-h2 {
-  text-align: center;
-  font-size: 28px;
-  color: #444;
-  margin-bottom: 20px;
-  animation: slideDown 1s ease-out;
-}
+    h2 {
+      text-align: center;
+      font-size: 32px;
+      color: #fff;
+      margin-bottom: 30px;
+      animation: slideDown 1s ease-out;
+      text-shadow: 1px 1px 4px rgba(0,0,0,0.5);
+    }
 
-@keyframes slideDown {
-  from { transform: translateY(-30px); opacity: 0; }
-  to { transform: translateY(0); opacity: 1; }
-}
+    @keyframes slideDown {
+      from { transform: translateY(-30px); opacity: 0; }
+      to { transform: translateY(0); opacity: 1; }
+    }
 
-.button-group {
-  text-align: center;
-  margin-bottom: 30px;
-}
+    .button-group {
+      text-align: center;
+      margin-bottom: 30px;
+    }
 
-.toggle-btn {
-  background-color: #88b04b;
-  color: white;
-  border: none;
-  padding: 10px 20px;
-  margin: 0 10px;
-  font-size: 16px;
-  border-radius: 8px;
-  cursor: pointer;
-  transition: transform 0.3s ease, background-color 0.3s ease;
-}
+    .toggle-btn {
+      background-color: #88b04b;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      margin: 0 10px;
+      font-size: 16px;
+      border-radius: 30px;
+      cursor: pointer;
+      transition: transform 0.3s ease, background-color 0.3s ease;
+    }
 
-.toggle-btn:hover {
-  background-color: #6f9440;
-  transform: translateY(-2px);
-}
+    .toggle-btn:hover {
+      background-color: #6f9440;
+      transform: translateY(-2px);
+    }
 
-.card {
-  background-color: rgba(255, 255, 255, 0.95);
-  border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-  padding: 25px;
-  margin-bottom: 40px;
-  max-width: 700px;
-  margin-left: auto;
-  margin-right: auto;
-  display: none;
-  opacity: 0;
-  transition: opacity 0.6s ease;
-}
+    .card {
+      background-color: rgba(255, 255, 255, 0.95);
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+      padding: 25px;
+      margin-bottom: 40px;
+      max-width: 700px;
+      margin-left: auto;
+      margin-right: auto;
+      display: none;
+      opacity: 0;
+      transition: opacity 0.6s ease;
+    }
 
-.card.active {
-  display: block;
-  opacity: 1;
-}
+    .card.active {
+      display: block;
+      opacity: 1;
+    }
 
-.card h3 {
-  font-size: 22px;
-  margin-bottom: 15px;
-  color: #333;
-  border-left: 6px solid #88b04b;
-  padding-left: 10px;
-}
+    .card h3 {
+      font-size: 24px;
+      margin-bottom: 15px;
+      color: #3a6edc;
+      border-left: 6px solid #3a6edc;
+      padding-left: 10px;
+    }
 
-.schedule-table {
-  width: 100%;
-  border-collapse: separate;
-  border-spacing: 0;
-  border-radius: 10px;
-  overflow: hidden;
-}
+    .schedule-table {
+      width: 100%;
+      border-collapse: collapse;
+      border-radius: 10px;
+      overflow: hidden;
+    }
 
-.schedule-table th {
-  background-color: #88b04b;
-  color: white;
-  padding: 12px;
-  font-size: 16px;
-  text-align: center;
-}
+    .schedule-table th {
+      background-color: #3a6edc;
+      color: white;
+      padding: 12px;
+      font-size: 16px;
+      text-align: center;
+    }
 
-.schedule-table td {
-  background-color: rgba(255, 255, 255, 0.85);
-  color: #333;
-  padding: 12px;
-  font-size: 16px;
-  text-align: center;
-  border-bottom: 1px solid #ddd;
-  transition: background-color 0.3s ease;
-}
+    .schedule-table td {
+      background-color: rgba(255, 255, 255, 0.85);
+      color: #333;
+      padding: 12px;
+      font-size: 16px;
+      text-align: center;
+      border-bottom: 1px solid #ddd;
+      transition: background-color 0.3s ease;
+    }
 
-.schedule-table tr:hover td {
-  background-color: #f0f8e8;
-}
+    .schedule-table tr:hover td {
+      background-color: #f0f8e8;
+    }
 
-.emoji {
-  display: inline-block;
-  animation: floatEmoji 2s ease-in-out infinite;
-}
+    .emoji {
+      display: inline-block;
+      animation: floatEmoji 2s ease-in-out infinite;
+    }
 
-@keyframes floatEmoji {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-5px); }
-}
-
-.photo-box {
-  text-align: center;
-  margin-top: 20px;
-}
-
-.photo-box img {
-  max-width: 100%;
-  border-radius: 10px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.2);
-  animation: pulsePhoto 4s ease-in-out infinite;
-}
-
-@keyframes pulsePhoto {
-  0%, 100% { transform: scale(1); }
-  50% { transform: scale(1.03); }
-}
+    @keyframes floatEmoji {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-5px); }
     }
 
     .photo-box {
@@ -149,7 +133,7 @@ h2 {
     .photo-box img {
       max-width: 100%;
       border-radius: 10px;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+      box-shadow: 0 2px 8px rgba(0,0,0,0.3);
       animation: pulsePhoto 4s ease-in-out infinite;
     }
 
