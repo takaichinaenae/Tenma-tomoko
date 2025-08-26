@@ -4,7 +4,6 @@
   <meta charset="UTF-8">
   <title>Autumn Camp 2025</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <!-- 手書き風フォント -->
   <link href="https://fonts.googleapis.com/css2?family=Caveat&display=swap" rel="stylesheet">
   <style>
     body {
@@ -21,8 +20,6 @@
       height: 100vh;
       overflow: hidden;
     }
-
-   
 
     .button-group {
       display: flex;
@@ -59,40 +56,37 @@
       }
     }
 
-    a.nav-link {
-      font-size: 18px;
+    .autumn-letter {
+      fill: #53ABC3;
+      opacity: 0;
+      animation: fadeInLetter 0.5s ease forwards;
     }
 
-    .autumn-text {
-      fill: none;
-      stroke: #53ABC3;
-      stroke-width: 2;
-      stroke-dasharray: 700;
-      stroke-dashoffset: 700;
-      animation: drawText 2s ease forwards, fillText 1s ease 2s forwards;
-    }
+    .autumn-letter:nth-child(1) { animation-delay: 0.2s; }
+    .autumn-letter:nth-child(2) { animation-delay: 0.5s; }
+    .autumn-letter:nth-child(3) { animation-delay: 0.8s; }
+    .autumn-letter:nth-child(4) { animation-delay: 1.1s; }
+    .autumn-letter:nth-child(5) { animation-delay: 1.4s; }
+    .autumn-letter:nth-child(6) { animation-delay: 1.7s; }
 
-    @keyframes drawText {
+    @keyframes fadeInLetter {
       to {
-        stroke-dashoffset: 0;
-      }
-    }
-
-    @keyframes fillText {
-      to {
-        fill: #53ABC3;
-        stroke: none;
+        opacity: 1;
       }
     }
   </style>
 </head>
 <body>
-  <!-- SVGで手書き風に描かれるAutumn -->
+  <!-- SVGで一文字ずつ描かれるAutumn -->
   <svg viewBox="0 0 600 150" width="100%" height="150">
     <text x="50%" y="50%" text-anchor="middle" dominant-baseline="middle"
-          font-family="'Caveat', cursive" font-size="120"
-          class="autumn-text">
-      Autumn
+          font-family="'Caveat', cursive" font-size="120">
+      <tspan class="autumn-letter">A</tspan>
+      <tspan class="autumn-letter">u</tspan>
+      <tspan class="autumn-letter">t</tspan>
+      <tspan class="autumn-letter">u</tspan>
+      <tspan class="autumn-letter">m</tspan>
+      <tspan class="autumn-letter">n</tspan>
     </text>
   </svg>
 
