@@ -29,14 +29,38 @@
   stroke-dashoffset: 800;
   font-family: 'Caveat', cursive;
   font-size: 100px;
+}
+
+.line1 {
   animation: drawText 3s ease forwards, fillText 1s ease 3s forwards;
+}
+
+.line2 {
+  animation: drawText 3s ease forwards, fillText 1s ease 3s forwards;
+}
+
+@keyframes drawText {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes fillText {
+  to {
+    fill: #53ABC3;
+    stroke: none;
+  }
 }
 
 @media (max-width: 600px) {
   .autumn-text {
-    font-size: 140px; /* サイズだけ変更 */
+    font-size: 140px;
+    fill: none;
+    stroke: #53ABC3;
+    stroke-width: 2;
+    stroke-dasharray: 800;
+    stroke-dashoffset: 800;
   }
-}
 
   .line1, .line2 {
     animation: drawText 3s ease forwards, fillText 1s ease 3s forwards;
