@@ -21,15 +21,22 @@
       overflow: hidden;
     }
 
-    .autumn-text {
+   .autumn-text {
   fill: none;
   stroke: #53ABC3;
   stroke-width: 2;
   stroke-dasharray: 800;
   stroke-dashoffset: 800;
-  animation: drawText 3s ease forwards, fillText 1s ease 3s forwards;
   font-family: 'Caveat', cursive;
-  font-size: 120px;
+  font-size: 60px;
+}
+
+.line1 {
+  animation: drawText 3s ease forwards, fillText 1s ease 3s forwards;
+}
+
+.line2 {
+  animation: drawText 3s ease forwards, fillText 1s ease 3s forwards;
 }
 
 @keyframes drawText {
@@ -42,6 +49,12 @@
   to {
     fill: #53ABC3;
     stroke: none;
+  }
+}
+
+@media (max-width: 600px) {
+  .autumn-text {
+    font-size: 40px;
   }
 }
     .button-group {
@@ -72,19 +85,19 @@
       background-color: #53ABC3;
     }
 
-    @media (max-width: 600px) {
-  .autumn-text {
-    font-size: 100px;
+   
   }
 }
   </style>
 </head>
 <body>
   <!-- SVGで筆記体Autumnを一筆書き風に描画 -->
- <svg viewBox="0 0 700 200" width="100%" height="200">
-  <text x="50%" y="40%" text-anchor="middle" dominant-baseline="middle" class="autumn-text">
-    <tspan x="50%" dy="0">Bell breeze</tspan>
-    <tspan x="50%" dy="1.2em">Autumn Camp</tspan>
+ <svg viewBox="0 0 700 250" width="100%" height="250">
+  <text x="50%" y="40%" text-anchor="middle" dominant-baseline="middle" class="autumn-text line1">
+    Bell breeze
+  </text>
+  <text x="50%" y="70%" text-anchor="middle" dominant-baseline="middle" class="autumn-text line2">
+    Autumn Camp
   </text>
 </svg>
 
