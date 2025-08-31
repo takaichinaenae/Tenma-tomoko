@@ -92,32 +92,13 @@
 .toggle-btn.active {
   background-color: #3a6edc;
 }
+    html {
+  scroll-behavior: smooth;
+}
   </style>
   
 </head>
-  <script>
-  function showDay(dayId, event) {
-    // すべてのスケジュールを非表示に
-    document.querySelectorAll('.day-section').forEach(section => {
-      section.style.display = 'none';
-    });
-
-    // 選択されたスケジュールを表示
-    document.getElementById(dayId).style.display = 'block';
-
-    // ボタンの見た目を切り替え
-    document.querySelectorAll('.toggle-btn').forEach(btn => {
-      btn.classList.remove('active');
-    });
-    event.target.classList.add('active');
-  }
-
-  // 初期表示はDAY1だけ
-  window.onload = function() {
-    document.getElementById('day1').style.display = 'block';
-    document.getElementById('day2').style.display = 'none';
-  };
-</script>
+  
 <body>
 <div class="button-group" style="text-align: center; margin-bottom: 30px;">
   <a href="#day1" class="toggle-btn">DAY1</a>
