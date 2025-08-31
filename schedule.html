@@ -73,9 +73,55 @@
   color: #333;
 }
   </style>
-</head>
-<body>
+  .toggle-btn {
+  background-color: #88b04b;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  margin: 0 10px;
+  font-size: 16px;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: transform 0.3s ease, background-color 0.3s ease;
+}
 
+.toggle-btn:hover {
+  background-color: #6f9440;
+  transform: translateY(-2px);
+}
+
+.toggle-btn.active {
+  background-color: #3a6edc;
+}
+</head>
+  <script>
+  function showDay(dayId, event) {
+    // すべてのスケジュールを非表示に
+    document.querySelectorAll('.day-section').forEach(section => {
+      section.style.display = 'none';
+    });
+
+    // 選択されたスケジュールを表示
+    document.getElementById(dayId).style.display = 'block';
+
+    // ボタンの見た目を切り替え
+    document.querySelectorAll('.toggle-btn').forEach(btn => {
+      btn.classList.remove('active');
+    });
+    event.target.classList.add('active');
+  }
+
+  // 初期表示はDAY1だけ
+  window.onload = function() {
+    document.getElementById('day1').style.display = 'block';
+    document.getElementById('day2').style.display = 'none';
+  };
+</script>
+<body>
+<div class="button-group" style="text-align: center; margin-bottom: 30px;">
+  <button class="toggle-btn" onclick="showDay('day1', event)">DAY1</button>
+  <button class="toggle-btn" onclick="showDay('day2', event)">DAY2</button>
+</div>
  <div class="schedule-container">
 
   <!-- 1日目 -->
