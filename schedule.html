@@ -6,163 +6,185 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c&display=swap" rel="stylesheet">
   <style>
-   .photo-scatter {
-    position: relative;
-    height: 300px;
-    margin-bottom: 60px;
-  }
+    body {
+      background-color: #fff8dc;
+      font-family: 'M PLUS Rounded 1c', sans-serif;
+      margin: 0;
+      padding: 0;
+    }
 
-  .photo-scatter .photo {
-    position: absolute;
-    width: 120px;
-    border-radius: 8px;
-    box-shadow: 0 2px 6px rgba(0,0,0,0.2);
-    transition: transform 0.3s ease;
-  }
+    .photo-scatter {
+      position: relative;
+      height: 300px;
+      margin: 40px auto;
+      max-width: 800px;
+    }
 
-  .photo-scatter .photo:hover {
-    transform: rotate(2deg) scale(1.05);
-  }
+    .photo-scatter .photo {
+      position: absolute;
+      width: 120px;
+      border-radius: 8px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+      transition: transform 0.3s ease;
+    }
 
-  .center { top: 40%; left: 45%; transform: translate(-50%, -50%) rotate(-2deg); }
-  .top-right { top: 10%; left: 70%; transform: rotate(3deg); }
-  .top-left { top: 15%; left: 20%; transform: rotate(-4deg); }
+    .photo-scatter .photo:hover {
+      transform: rotate(2deg) scale(1.05);
+    }
 
-  .lodging-info {
-    text-align: center;
-    margin-bottom: 40px;
-  }
+    .center { top: 40%; left: 45%; transform: translate(-50%, -50%) rotate(-2deg); }
+    .top-right { top: 10%; left: 70%; transform: rotate(3deg); }
+    .top-left { top: 15%; left: 20%; transform: rotate(-4deg); }
 
-  .lodging-info a {
-    font-size: 18px;
-    color: #3a6edc;
-    text-decoration: underline;
-    display: block;
-    margin-bottom: 12px;
-  }
+    .lodging-info {
+      text-align: center;
+      margin: 40px auto;
+    }
 
-  .lodging-info img {
-    width: 240px;
-    border-radius: 8px;
-    box-shadow: 0 2px 6px rgba(0,0,0,0.2);
- 
+    .lodging-info a {
+      font-size: 18px;
+      color: #3a6edc;
+      text-decoration: underline;
+      display: block;
+      margin-bottom: 12px;
+    }
+
+    .lodging-info img {
+      width: 240px;
+      border-radius: 8px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+    }
+
+    .button-group {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+
+    .toggle-btn {
+      background-color: #53ABC3;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      margin: 0 10px;
+      font-size: 16px;
+      border-radius: 30px;
+      cursor: pointer;
+      transition: transform 0.3s ease, background-color 0.3s ease;
+    }
+
+    .toggle-btn:hover {
+      background-color: #6f9440;
+      transform: translateY(-2px);
+    }
+
+    .toggle-btn.active {
+      background-color: #3a6edc;
+    }
+
+    .schedule-container {
+      width: 66%;
+      margin: 0 auto;
+      padding: 40px 20px;
+    }
+
+    .day-section {
+      margin-bottom: 60px;
+      position: relative;
+      padding-left: 30px;
+      border-left: 4px solid #53ABC3;
+    }
+
+    .day {
+      font-size: 20px;
+      font-weight: bold;
+      color: #2f4f4f;
+      margin-bottom: 20px;
+    }
+
+    .timeline-item {
+      position: relative;
+      margin-bottom: 30px;
+      padding-left: 20px;
+    }
+
+    .timeline-item::before {
+      content: "";
+      position: absolute;
+      left: -30px;
+      top: 8px;
+      width: 16px;
+      height: 16px;
+      background-color: #53ABC3;
+      border-radius: 50%;
+      border: 2px solid #53ABC3;
+    }
+
+    .timeline-time {
+      font-weight: bold;
+      color: #53ABC3;
+      margin-bottom: 6px;
+    }
+
+    .timeline-content {
+      background-color: #fffaf0;
+      padding: 12px 16px;
+      border-radius: 8px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    }
+
+    .timeline-content h3 {
+      margin: 0;
+      font-size: 18px;
+      color: #556b2f;
+    }
+
+    .timeline-content p {
+      margin: 6px 0 0;
+      font-size: 15px;
+      color: #333;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
   </style>
-  
 </head>
-  
 <body>
-  
-  </div>
+
   <div class="photo-scatter">
-  <img src="https://aws-tiqets-cdn.imgix.net/images/content/01b32748b99246758705364063cd5a44.jpeg?auto=format%2Ccompress&fit=crop&ixlib=python-4.0.0&q=70" class="photo center">
-  <img src="https://res.klook.com/image/upload/q_85/c_fill,w_1360/v1693988220/s5n9dmlnmdvrzaocbx6f.jpg" class="photo top-right">
-  <img src="https://th.bing.com/th/id/OIP.p5oEcu5bkH6wF5TcaWY1VAHaDs?w=276&h=174&c=7&r=0&o=5&pid=1.7" class="photo top-left">
-  
-<div class="lodging-info">
+    <img src="https://aws-tiqets-cdn.imgix.net/images/content/01b32748b99246758705364063cd5a44.jpeg?auto=format%2Ccompress&fit=crop&ixlib=python-4.0.0&q=70" class="photo center">
+    <img src="https://res.klook.com/image/upload/q_85/c_fill,w_1360/v1693988220/s5n9dmlnmdvrzaocbx6f.jpg" class="photo top-right">
+    <img src="https://th.bing.com/th/id/OIP.p5oEcu5bkH6wF5TcaWY1VAHaDs?w=276&h=174&c=7&r=0&o=5&pid=1.7" class="photo top-left">
+  </div>
+
+  <div class="lodging-info">
     <a href="https://example.com/宿のページ" target="_blank">宿の詳細はこちら</a>
-    <img src="宿の画像URL" >
+    <img src="画像URL" alt="宿の写真">
   </div>
 
-<div class="button-group" style="text-align: center; margin-bottom: 30px;">
-  <a href="#day1" class="toggle-btn">DAY1</a>
-  <a href="#day2" class="toggle-btn">DAY2</a>
-</div>
- <div class="schedule-container">
-
-  <!-- 1日目 -->
-  <div class="day-section" id="day1">
-    <div class="day">10月25日（土）</div>
-    <div class="timeline-item">
-      <div class="timeline-time">10:00</div>
-      <div class="timeline-content">
-        <h3>集合・受付</h3>
-        <p>キャンプ場入口にて受付を行います。</p>
-      </div>
-    </div>
-    <div class="timeline-item">
-      <div class="timeline-time">11:00</div>
-      <div class="timeline-content">
-        <h3>オリエンテーション</h3>
-        <p>班分けとルール説明。自己紹介もあります🌿</p>
-      </div>
-    </div>
-    <div class="timeline-item">
-      <div class="timeline-time">12:00</div>
-      <div class="timeline-content">
-        <h3>昼食</h3>
-        <p>お弁当タイム。自然の中でピクニック気分！</p>
-      </div>
-    </div>
-    <div class="timeline-item">
-      <div class="timeline-time">13:30</div>
-      <div class="timeline-content">
-        <h3>ワークショップ</h3>
-        <p>クラフト体験や講義。班ごとに分かれて活動します。</p>
-      </div>
-    </div>
-    <div class="timeline-item">
-      <div class="timeline-time">17:00</div>
-      <div class="timeline-content">
-        <h3>休憩</h3>
-        <p>自由時間。散歩やお昼寝もOK。</p>
-      </div>
-    </div>
-    <div class="timeline-item">
-      <div class="timeline-time">18:00</div>
-      <div class="timeline-content">
-        <h3>夕食</h3>
-        <p>BBQで盛り上がろう！🔥</p>
-      </div>
-    </div>
-    <div class="timeline-item">
-      <div class="timeline-time">20:30</div>
-      <div class="timeline-content">
-        <h3>入浴</h3>
-        <p>順番に入ります。星空を眺めながら♨️</p>
-      </div>
-    </div>
-    <div class="timeline-item">
-      <div class="timeline-time">22:00</div>
-      <div class="timeline-content">
-        <h3>就寝</h3>
-        <p>おやすみなさい。明日に備えてぐっすりと。</p>
-      </div>
-    </div>
+  <div class="button-group">
+    <a href="#day1" class="toggle-btn">DAY1</a>
+    <a href="#day2" class="toggle-btn">DAY2</a>
   </div>
 
-  <!-- 2日目 -->
-  <div class="day-section" id="day2">
-    <div class="day">10月26日（日）</div>
-    <div class="timeline-item">
-      <div class="timeline-time">7:30</div>
-      <div class="timeline-content">
-        <h3>朝食</h3>
-        <p>パンとスープでさわやかな朝を☀️</p>
-      </div>
-    </div>
-    <div class="timeline-item">
-      <div class="timeline-time">8:30</div>
-      <div class="timeline-content">
-        <h3>片付け</h3>
-        <p>テントや道具をみんなで協力して片付けます。</p>
-      </div>
-    </div>
-    <div class="timeline-item">
-      <div class="timeline-time">9:30</div>
-      <div class="timeline-content">
-        <h3>ふりかえり</h3>
-        <p>感想を共有して、記念撮影📸</p>
-      </div>
-    </div>
-    <div class="timeline-item">
-      <div class="timeline-time">10:30</div>
-      <div class="timeline-content">
-        <h3>解散</h3>
-        <p>おつかれさまでした！また会いましょう🌈</p>
-      </div>
-    </div>
-  </div>
+  <div class="schedule-container">
 
-</div>
-</body>
-</html>
+    <!-- 1日目 -->
+    <div class="day-section" id="day1">
+      <div class="day">10月25日（土）</div>
+      <div class="timeline-item"><div class="timeline-time">10:00</div><div class="timeline-content"><h3>集合・受付</h3><p>キャンプ場入口にて受付を行います。</p></div></div>
+      <div class="timeline-item"><div class="timeline-time">11:00</div><div class="timeline-content"><h3>オリエンテーション</h3><p>班分けとルール説明。自己紹介もあります🌿</p></div></div>
+      <div class="timeline-item"><div class="timeline-time">12:00</div><div class="timeline-content"><h3>昼食</h3><p>お弁当タイム。自然の中でピクニック気分！</p></div></div>
+      <div class="timeline-item"><div class="timeline-time">13:30</div><div class="timeline-content"><h3>ワークショップ</h3><p>クラフト体験や講義。班ごとに分かれて活動します。</p></div></div>
+      <div class="timeline-item"><div class="timeline-time">17:00</div><div class="timeline-content"><h3>休憩</h3><p>自由時間。散歩やお昼寝もOK。</p></div></div>
+      <div class="timeline-item"><div class="timeline-time">18:00</div><div class="timeline-content"><h3>夕食</h3><p>BBQで盛り上がろう！🔥</p></div></div>
+      <div class="timeline-item"><div class="timeline-time">20:30</div><div class="timeline-content"><h3>入浴</h3><p>順番に入ります。星空を眺めながら♨️</p></div></div>
+      <div class="timeline-item"><div class="timeline-time">22:00</div><div class="timeline-content"><h3>就寝</h3><p>おやすみなさい。明日に備えてぐっすりと。</p></div></div>
+    </div>
+
+    <!-- 2日目 -->
+    <div class="day-section" id="day2">
+      <div class="day">10月26日（日）</div>
+      <div class="timeline-item"><div class="timeline-time">7:30</div><div class="timeline-content"><h3>朝食</h3><p>パンとスープでさわやかな朝を☀️</p></div></div>
+      <div class="timeline-item"><div class="timeline-time">8:30</div><div class="timeline-content"><h3>片付け</h3><p>テントや道具をみんなで協力して片付けます。</p></div></div>
+      <div class="timeline-item"><div class="timeline-time">9:30</div><div
