@@ -22,7 +22,7 @@
 
   .photo-scatter .photo {
     position: absolute;
-    width: 240px;
+    width: 160px;
     border-radius: 12px;
     box-shadow: 0 4px 10px rgba(0,0,0,0.2);
     transition: transform 0.3s ease;
@@ -89,6 +89,17 @@
       background-color: #3a6edc;
     }
 
+    .top-left {
+  top: 10%;
+  left: 10%;
+  transform: rotate(-4deg);
+}
+
+.bottom-right {
+  bottom: 10%;
+  left: 65%;
+  transform: rotate(3deg);
+}
     .schedule-container {
       width: 66%;
       margin: 0 auto;
@@ -161,8 +172,9 @@
 
   <div class="photo-scatter">
     
-    <img src="https://th.bing.com/th/id/OIP.Q2AtbQWcGAhY4f-RZSs9PwHaDX?w=309&h=159&c=7&r=0&o=5&pid=1.7">
-    <img src="https://tse4.mm.bing.net/th/id/OIP.325ghOcw7ln7aJSwPIyrLQHaFj?rs=1&pid=ImgDetMain&o=7&rm=3"photo top-left">
+<img src="https://th.bing.com/th/id/OIP.Q2AtbQWcGAhY4f-RZSs9PwHaDX?w=309&h=159&c=7&r=0&o=5&pid=1.7" class="photo top-left">
+<img src="https://tse4.mm.bing.net/th/id/OIP.325ghOcw7ln7aJSwPIyrLQHaFj?rs=1&pid=ImgDetMain&o=7&rm=3" class="photo bottom-right">    
+    
   </div>
 
   <div class="lodging-info">
