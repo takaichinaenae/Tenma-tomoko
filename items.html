@@ -21,12 +21,11 @@ h1 {
 
 form#checklist-form {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr; /* ← 3列表示に変更 */
+  grid-template-columns: 1fr 1fr; /* ← 2列表示に戻す */
   gap: 8px 20px;
-  max-width: 900px;
+  max-width: 700px;
   margin: 0 auto;
 }
-
 
 label {
   font-size: 13px;
@@ -38,9 +37,11 @@ label {
   text-align: left;
   background: none;
   box-shadow: none;
-  max-width: 280px;            /* ← 横幅を制限して折り返しを調整 */
-  overflow-wrap: break-word;   /* ← 単語の途中でも折り返し */
-  display: inline-block;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;           /* ← 最大2行に制限 */
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  word-break: break-word;
 }
 
 label:hover {
