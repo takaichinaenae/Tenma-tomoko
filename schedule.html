@@ -13,35 +13,124 @@
       padding: 0;
     }
 
+    .photo-scatter {
+    position: relative;
+    height: 320px;
+    margin: 40px auto;
+    max-width: 800px;
+  }
+
+  .photo-scatter .photo {
+    position: absolute;
+    width: 320px;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    transition: transform 0.3s ease;
+  }
+
+  .photo-scatter .photo:hover {
+    transform: rotate(2deg) scale(1.05);
+  }
+
+  .center {
+  width: 320px;         
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(-2deg);
+}
+
+
+  
+  }
+
+  .lodging-info {
+    text-align: center;
+    margin: 40px auto;
+  }
+
+  .lodging-info a {
+    font-size: 18px;
+    color: #3a6edc;
+    text-decoration: underline;
+    display: block;
+    margin-bottom: 12px;
+  }
+
+    .lodging-info img {
+      width: 240px;
+      border-radius: 8px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+    }
+
+    .button-group {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+
+    .toggle-btn {
+      background-color: #53ABC3;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      margin: 0 10px;
+      font-size: 16px;
+      border-radius: 30px;
+      cursor: pointer;
+      transition: transform 0.3s ease, background-color 0.3s ease;
+    }
+
+    .toggle-btn:hover {
+      background-color: #6f9440;
+      transform: translateY(-2px);
+    }
+
+    .toggle-btn.active {
+      background-color: #3a6edc;
+    }
+
+   .top-left {
+  width: 50px;         /* ← 少し小さめに */
+  top: 15%;
+  left: 10%;             /* ← 左に寄せる */
+  transform: rotate(-5deg);
+}
+
+
+.bottom-right {
+  bottom: 5%;
+  left: 60%;
+  transform: rotate(3deg);
+}
     .schedule-container {
-      max-width: 800px;
+      width: 66%;
       margin: 0 auto;
       padding: 40px 20px;
     }
 
-    .day-title {
-      text-align: center;
-      font-size: 24px;
-      font-weight: bold;
-      color: #2f4f4f;
-      margin-bottom: 40px;
+    .day-section {
+      margin-bottom: 60px;
+      position: relative;
+      padding-left: 30px;
+      border-left: 4px solid #53ABC3;
     }
 
-    .timeline {
-      position: relative;
-      border-left: 4px solid #53ABC3;
-      padding-left: 30px;
+    .day {
+      font-size: 20px;
+      font-weight: bold;
+      color: #2f4f4f;
+      margin-bottom: 20px;
     }
 
     .timeline-item {
       position: relative;
-      margin-bottom: 60px;
+      margin-bottom: 30px;
+      padding-left: 20px;
     }
 
     .timeline-item::before {
       content: "";
       position: absolute;
-      left: -12px;
+      left: -30px;
       top: 8px;
       width: 16px;
       height: 16px;
@@ -53,15 +142,14 @@
     .timeline-time {
       font-weight: bold;
       color: #53ABC3;
-      margin-bottom: 8px;
-      font-size: 16px;
+      margin-bottom: 6px;
     }
 
     .timeline-content {
       background-color: #fffaf0;
-      padding: 16px;
-      border-radius: 12px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      padding: 12px 16px;
+      border-radius: 8px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
     }
 
     .timeline-content h3 {
@@ -76,28 +164,6 @@
       color: #333;
     }
 
-    .timeline-photo {
-      width: 100%;
-      border-radius: 8px;
-      margin-top: 12px;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.2);
-    }
-
-    .memo {
-      margin: 60px auto;
-      max-width: 600px;
-      text-align: center;
-      background-color: #fffaf0;
-      padding: 20px;
-      border-radius: 12px;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-    }
-
-    .memo h3 {
-      margin-bottom: 10px;
-      color: #2f4f4f;
-    }
-
     html {
       scroll-behavior: smooth;
     }
@@ -105,55 +171,41 @@
 </head>
 <body>
 
+  <div class="photo-scatter">
+    
+<img src="https://www.upon.co.jp/column/wp-content/uploads/2018/05/fujiq201805.jpg" class="photo center">
+   
+    
+  </div>
+
+  <div class="lodging-info">
+    <a href="https://example.com/宿のページ" target="_blank">宿の詳細はこちら</a>
+    
+  </div>
+
+  <div class="button-group">
+    <a href="#day1" class="toggle-btn">DAY1</a>
+    <a href="#day2" class="toggle-btn">DAY2</a>
+  </div>
+
   <div class="schedule-container">
-    <div class="day-title">Day 1　2030/8/9（金）</div>
-    <div class="timeline">
 
-      <div class="timeline-item">
-        <div class="timeline-time">08:00</div>
-        <div class="timeline-content">
-          <h3>駅の改札前集合</h3>
-          <p>みんなで集合して出発準備！</p>
-          <img src="photo1.jpg" alt="集合写真" class="timeline-photo">
-        </div>
-      </div>
-
-      <div class="timeline-item">
-        <div class="timeline-time">09:30</div>
-        <div class="timeline-content">
-          <h3>京都駅到着</h3>
-          <p>旅の始まり、わくわくの瞬間。</p>
-          <img src="photo2.jpg" alt="京都駅" class="timeline-photo">
-        </div>
-      </div>
-
-      <div class="timeline-item">
-        <div class="timeline-time">10:30</div>
-        <div class="timeline-content">
-          <h3>お寺見学</h3>
-          <p>静かな時間を楽しもう。</p>
-          <img src="photo3.jpg" alt="お寺" class="timeline-photo">
-        </div>
-      </div>
-
-      <div class="timeline-item">
-        <div class="timeline-time">12:00</div>
-        <div class="timeline-content">
-          <h3>川沿いでランチ</h3>
-          <p>自然の中でピクニック気分！</p>
-          <img src="photo4.jpg" alt="ランチ" class="timeline-photo">
-        </div>
-      </div>
-
-      <!-- 以下、14:00〜19:00の項目も同様に追加できます -->
-
+    <!-- 1日目 -->
+    <div class="day-section" id="day1">
+      <div class="day">10月25日（土）</div>
+      <div class="timeline-item"><div class="timeline-time">10:00</div><div class="timeline-content"><h3>集合・受付</h3><p>キャンプ場入口にて受付を行います。</p></div></div>
+      <div class="timeline-item"><div class="timeline-time">11:00</div><div class="timeline-content"><h3>オリエンテーション</h3><p>班分けとルール説明。自己紹介もあります🌿</p></div></div>
+      <div class="timeline-item"><div class="timeline-time">12:00</div><div class="timeline-content"><h3>昼食</h3><p>お弁当タイム。自然の中でピクニック気分！</p></div></div>
+      <div class="timeline-item"><div class="timeline-time">13:30</div><div class="timeline-content"><h3>ワークショップ</h3><p>クラフト体験や講義。班ごとに分かれて活動します。</p></div></div>
+      <div class="timeline-item"><div class="timeline-time">17:00</div><div class="timeline-content"><h3>休憩</h3><p>自由時間。散歩やお昼寝もOK。</p></div></div>
+      <div class="timeline-item"><div class="timeline-time">18:00</div><div class="timeline-content"><h3>夕食</h3><p>BBQで盛り上がろう！🔥</p></div></div>
+      <div class="timeline-item"><div class="timeline-time">20:30</div><div class="timeline-content"><h3>入浴</h3><p>順番に入ります。星空を眺めながら♨️</p></div></div>
+      <div class="timeline-item"><div class="timeline-time">22:00</div><div class="timeline-content"><h3>就寝</h3><p>おやすみなさい。明日に備えてぐっすりと。</p></div></div>
     </div>
-  </div>
 
-  <div class="memo">
-    <h3>MEMO</h3>
-    <p>持ち物や注意点など、自由に書き込んでください📝</p>
-  </div>
-
-</body>
-</html>
+    <!-- 2日目 -->
+    <div class="day-section" id="day2">
+      <div class="day">10月26日（日）</div>
+      <div class="timeline-item"><div class="timeline-time">7:30</div><div class="timeline-content"><h3>朝食</h3><p>パンとスープでさわやかな朝を☀️</p></div></div>
+      <div class="timeline-item"><div class="timeline-time">8:30</div><div class="timeline-content"><h3>片付け</h3><p>テントや道具をみんなで協力して片付けます。</p></div></div>
+      <div class="timeline-item"><div class="timeline-time">9:30</div><div
