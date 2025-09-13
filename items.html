@@ -38,7 +38,7 @@ label {
   background: none;
   box-shadow: none;
   display: -webkit-box;
-  -webkit-line-clamp: 2;           /* ← 最大2行に制限 */
+  -webkit-line-clamp: 3;           /* ← 最大2行に制限 */
   -webkit-box-orient: vertical;
   overflow: hidden;
   word-break: break-word;
@@ -117,15 +117,7 @@ label.checked {
       });
     });
 
-    // 全てチェックされているか確認して背景変更
-    function checkAllStatus() {
-      const allChecked = Array.from(checkboxes).every(cb => cb.checked);
-      if (allChecked) {
-        document.body.classList.add('ready');
-      } else {
-        document.body.classList.remove('ready');
-      }
-    }
+    
   </script>
 </body>
 </html>
