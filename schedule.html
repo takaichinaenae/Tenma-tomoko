@@ -13,42 +13,46 @@
       padding: 0;
     }
 
-    .photo-stack {
+   .photo-scatter {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  margin: 24px auto;
+  max-width: 360px;
   position: relative;
-  max-width: 400px;
-  margin: 40px auto;
 }
 
-.photo-stack img {
-  width: 100%;
-  max-width: 280px;
-  border-radius: 12px;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-  position: relative;
-  display: block;
-  margin: 0 auto 24px;
+.photo-scatter img {
+  width: 100px;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
   transition: transform 0.3s ease;
 }
 
-.photo-stack img:nth-child(1) {
-  transform: rotate(-3deg);
+.photo-scatter img:nth-child(1) {
+  transform: rotate(-5deg);
+  margin-top: 8px;
+}
+
+.photo-scatter img:nth-child(2) {
+  transform: rotate(3deg);
   margin-top: 0;
 }
 
-.photo-stack img:nth-child(2) {
-  transform: rotate(2deg);
-  margin-left: 20px;
-}
-
-.photo-stack img:nth-child(3) {
-  transform: rotate(-1.5deg);
-  margin-left: 40px;
+.photo-scatter img:nth-child(3) {
+  transform: rotate(-2deg);
+  margin-top: 12px;
 }
 
 @media screen and (max-width: 480px) {
-  .photo-stack img {
-    max-width: 90%;
-    margin-left: 0 !important;
+  .photo-scatter {
+    gap: 8px;
+    max-width: 100%;
+  }
+
+  .photo-scatter img {
+    width: 28vw;
   }
 }
     .lodging-info {
@@ -131,7 +135,7 @@
 
   
 
-  <div class="photo-stack">
+  <div class="photo-scatter">
   <img src="photo1.jpg" alt="富士山">
   <img src="photo2.jpg" alt="姫路城">
   <img src="photo3.jpg" alt="鳥居">
