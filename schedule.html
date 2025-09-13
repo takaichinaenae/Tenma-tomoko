@@ -13,43 +13,46 @@
       padding: 0;
     }
 
-   .photo-scatter {
+  .photo-scatter-vertical {
   display: flex;
-  justify-content: center;
-  gap: 12px;
-  margin: 24px auto;
-  max-width: 360px;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  margin: 32px auto;
+  max-width: 300px;
   position: relative;
 }
 
-.photo-scatter img {
-  width: 100px;
-  height: auto;
-  border-radius: 8px;
+.photo-scatter-vertical img {
+  width: 80%;
+  max-width: 220px;
+  border-radius: 10px;
   box-shadow: 0 2px 6px rgba(0,0,0,0.2);
   transition: transform 0.3s ease;
 }
 
-.photo-scatter img:nth-child(1) {
-  transform: rotate(-5deg);
-  margin-top: 8px;
+.photo-scatter-vertical img:nth-child(1) {
+  transform: rotate(-4deg);
+  margin-left: -10px;
 }
 
-.photo-scatter img:nth-child(2) {
+.photo-scatter-vertical img:nth-child(2) {
   transform: rotate(3deg);
-  margin-top: 0;
+  margin-left: 10px;
 }
 
-.photo-scatter img:nth-child(3) {
+.photo-scatter-vertical img:nth-child(3) {
   transform: rotate(-2deg);
-  margin-top: 12px;
+  margin-left: -6px;
 }
 
 @media screen and (max-width: 480px) {
-  .photo-scatter {
-    gap: 8px;
-    max-width: 100%;
+  .photo-scatter-vertical img {
+    width: 90%;
+    margin-left: 0;
+    transform: none;
   }
+}
 
   .photo-scatter img {
     width: 28vw;
@@ -135,7 +138,7 @@
 
   
 
-  <div class="photo-scatter">
+  <div class="photo-scatter-vertical">
   <img src="photo1.jpg" alt="富士山">
   <img src="photo2.jpg" alt="姫路城">
   <img src="photo3.jpg" alt="鳥居">
