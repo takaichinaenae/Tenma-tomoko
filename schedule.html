@@ -13,43 +13,44 @@
       padding: 0;
     }
 
-    .photo-scatter {
-      position: relative;
-      height: 300px;
-      max-width: 800px;
-      margin: 40px auto 0;
-    }
+    .photo-stack {
+  position: relative;
+  max-width: 400px;
+  margin: 40px auto;
+}
 
-    .photo-scatter img {
-      position: absolute;
-      width: 180px;
-      border-radius: 12px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-      transition: transform 0.3s ease;
-    }
+.photo-stack img {
+  width: 100%;
+  max-width: 280px;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+  position: relative;
+  display: block;
+  margin: 0 auto 24px;
+  transition: transform 0.3s ease;
+}
 
-    .photo-scatter img:hover {
-      transform: rotate(2deg) scale(1.05);
-    }
+.photo-stack img:nth-child(1) {
+  transform: rotate(-3deg);
+  margin-top: 0;
+}
 
-    .photo1 {
-      top: 10px;
-      left: 20px;
-      transform: rotate(-5deg);
-    }
+.photo-stack img:nth-child(2) {
+  transform: rotate(2deg);
+  margin-left: 20px;
+}
 
-    .photo2 {
-      top: 40px;
-      left: 220px;
-      transform: rotate(3deg);
-    }
+.photo-stack img:nth-child(3) {
+  transform: rotate(-1.5deg);
+  margin-left: 40px;
+}
 
-    .photo3 {
-      top: 80px;
-      left: 420px;
-      transform: rotate(-2deg);
-    }
-
+@media screen and (max-width: 480px) {
+  .photo-stack img {
+    max-width: 90%;
+    margin-left: 0 !important;
+  }
+}
     .lodging-info {
       text-align: center;
       margin: 30px auto;
@@ -128,13 +129,14 @@
 </head>
 <body>
 
-  <!-- 写真ちりばめゾーン -->
-  <div class="photo-scatter">
-    <img src="photo1.jpg" alt="富士山" class="photo1">
-    <img src="photo2.jpg" alt="姫路城" class="photo2">
-    <img src="photo3.jpg" alt="鳥居" class="photo3">
-  </div>
+  
 
+  <div class="photo-stack">
+  <img src="photo1.jpg" alt="富士山">
+  <img src="photo2.jpg" alt="姫路城">
+  <img src="photo3.jpg" alt="鳥居">
+</div>
+  
   <!-- 宿の詳細 -->
   <div class="lodging-info">
     <a href="http://kyoritsu.jp//宿のページ" target="_blank">宿の詳細はこちら</a>
