@@ -55,7 +55,29 @@
   }
 }
 
+.photo-decor-wrapper {
+  position: relative;
+  width: fit-content;
+  margin: 0 auto 24px;
+}
 
+.main-photo {
+  width: 180px;
+  border-radius: 10px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+}
+
+.decor {
+  position: absolute;
+  width: 40px;
+  height: auto;
+  transition: transform 0.3s ease;
+}
+
+.decor1 { top: -20px; left: -20px; transform: rotate(-15deg); }
+.decor2 { top: 10px; right: -25px; transform: rotate(10deg); }
+.decor3 { bottom: -20px; left: 0px; transform: rotate(-5deg); }
+.decor4 { bottom: -10px; right: -20px; transform: rotate(8deg); }
   
 }
     .lodging-info {
@@ -136,7 +158,13 @@
 </head>
 <body>
 
-  
+  <div class="photo-decor-wrapper">
+  <img src="photo1.jpg" alt="富士山" class="main-photo">
+  <img src="icon-plane.png" alt="飛行機" class="decor decor1">
+  <img src="icon-map.png" alt="地図" class="decor decor2">
+  <img src="icon-camera.png" alt="カメラ" class="decor decor3">
+  <img src="icon-passport.png" alt="パスポート" class="decor decor4">
+</div>
 
   <div class="photo-scatter-vertical">
   <img src="photo1.jpg" alt="富士山">
