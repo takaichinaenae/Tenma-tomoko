@@ -31,9 +31,9 @@
   stroke-dashoffset: 800;
   font-family: 'Caveat', cursive;
   font-size: 140px;
+  color: #FFFCBF; /* ← 塗りつぶし後の色をここで指定 */
   animation: drawText 3s ease forwards, fillText 1s ease 3s forwards;
 }
-
 /* 塗りつぶし用のアニメーション */
 @keyframes drawText {
   to {
@@ -43,7 +43,7 @@
 
 @keyframes fillText {
   to {
-    fill: #53ABC3;
+    fill: currentColor;
     stroke: none;
   }
 }
@@ -83,10 +83,13 @@
 <body>
   <!-- SVGで筆記体Autumnを一筆書き風に描画 -->
  <svg viewBox="0 0 700 250" width="100%" height="250">
-  <text x="50%" y="20%" text-anchor="middle" dominant-baseline="middle" class="autumn-text line1">
-    Bell breeze
-  </text>
-  <text x="50%" y="60%" text-anchor="middle" dominant-baseline="middle" class="autumn-text line2">
+  <text x="50%" y="20%" text-anchor="middle" dominant-baseline="middle"
+      class="autumn-text line1" fill="none" stroke="#FFFCBF">
+  Bell breeze
+</text>
+  <text x="50%" y="60%" text-anchor="middle" dominant-baseline="middle"
+      class="autumn-text line2" fill="none" stroke="#FFFCBF">
+
     Autumn Camp
   </text>
 </svg>
