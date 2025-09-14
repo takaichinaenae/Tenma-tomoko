@@ -6,6 +6,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c&display=swap" rel="stylesheet">
   <style>
+    .item-title {
+  fill: none; /* SVG用。HTMLテキストには不要 */
+  color: #53ABC3;
+  font-family: 'Caveat', cursive;
+  font-size: 140px;
+  font-weight: normal;
+  letter-spacing: 2px;
+}
     .team-container {
   display: grid;
   grid-template-columns: 1fr;
@@ -75,10 +83,11 @@ label.checked {
   color: #999;
   text-decoration: line-through;
 }
+<link href="https://fonts.googleapis.com/css2?family=Caveat&display=swap" rel="stylesheet">    
   </style>
 </head>
 <body>
- <h1>持ち物</h1>
+ <h1 class="item-title">Item</h1>
 
 <div class="team-container">
   <div class="team-card">
