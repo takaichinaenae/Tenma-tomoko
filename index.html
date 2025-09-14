@@ -31,8 +31,7 @@
   stroke-dashoffset: 800;
   font-family: 'Caveat', cursive;
   font-size: 140px;
-  color: #FFFCBF; /* ← 塗りつぶし後の色をここで指定 */
-  animation: drawText 3s ease forwards, fillText 1s ease 3s forwards;
+  animation: drawText 1s ease forwards;
 }
 /* 塗りつぶし用のアニメーション */
 @keyframes drawText {
@@ -98,5 +97,15 @@
     <a href="items.html" class="nav-button">🥑 持ち物</a>
     <a href="members.html" class="nav-button"> 🍊班分け</a>
   </div>
+  <script>
+  // 3秒後に塗りつぶしを適用
+  setTimeout(() => {
+    const texts = document.querySelectorAll('.autumn-text');
+    texts.forEach(text => {
+      text.setAttribute('fill', '#FFFCBF');
+      text.setAttribute('stroke', 'none');
+    });
+  }, 3000);
+</script>
 </body>
 </html>
