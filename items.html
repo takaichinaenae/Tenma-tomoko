@@ -2,112 +2,142 @@
 <html lang="ja">
 <head>
   <meta charset="UTF-8">
-  <title>合宿のしおり</title>
+  <title>持ち物チェック</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c&display=swap" rel="stylesheet">
   <style>
+    .team-container {
+  display: grid;
+  grid-template-columns: 1fr;
+  max-width: 700px;
+  margin: 0 auto;
+  padding-bottom: 30px;
+}
+
+.team-card {
+  padding: 20px;
+  border-radius: 12px;
+  background-color: rgba(255, 255, 255, 0.85);
+  color: #2f4f4f;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  border: 4px solid #deb887;
+  animation: fadeIn 0.6s ease-in-out;
+  transition: transform 0.3s ease;
+}
     body {
-      font-family: "Hiragino Kaku Gothic ProN", sans-serif;
-      background-color: #f8fff5;
-      color: #333;
-      padding: 20px;
-    }
+  font-family: 'M PLUS Rounded 1c', sans-serif;
+  margin: 0;
+  padding: 40px;
+  background-color: #fff8dc; 
+  }
 
-    .container {
-      max-width: 700px;
-      margin: auto;
-      background: #ffffff;
-      border-radius: 12px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.1);
-      padding: 30px;
-    }
+h1 {
+  color: #444;
+  text-align: center;
+  margin-bottom: 30px;
+}
 
-    .title {
-      font-size: 28px;
-      text-align: center;
-      margin-bottom: 10px;
-      color: #4caf50;
-    }
+form#checklist-form {
+  display: grid;
+  grid-template-columns: 1fr 1fr; 
+  gap: 8px 20px;
+  max-width: 700px;
+  margin: 0 auto;
+}
 
-    .subtitle {
-      font-size: 18px;
-      text-align: center;
-      margin-bottom: 30px;
-      color: #777;
-    }
+label {
+  font-size: 13px;
+  line-height: 1.4;
+  cursor: pointer;
+  padding: 4px 6px;
+  border-radius: 0;
+  transition: color 0.3s ease;
+  text-align: left;
+  background: none;
+  box-shadow: none;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;           
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  word-break: break-word;
+}
 
-    .day {
-      font-size: 22px;
-      margin-top: 30px;
-      color: #2e7d32;
-      border-bottom: 2px dotted #a5d6a7;
-      padding-bottom: 5px;
-    }
+label:hover {
+  color: #53ABC3;
+}
+input[type="checkbox"] {
+  margin-right: 6px;
+  transform: scale(1.1);
+  cursor: pointer;
+}
 
-    .schedule {
-      margin-top: 15px;
-    }
-
-    .time-block {
-      margin-bottom: 15px;
-    }
-
-    .time {
-      font-weight: bold;
-      color: #388e3c;
-    }
-
-    .activity {
-      margin-left: 10px;
-    }
-
-    .note {
-      margin-left: 20px;
-      font-size: 14px;
-      color: #666;
-    }
+label.checked {
+  color: #999;
+  text-decoration: line-through;
+}
   </style>
 </head>
 <body>
-  <div class="container">
-    <div class="title">🌿 合宿のしおり</div>
-    <div class="subtitle">1泊2日スケジュール</div>
+ <h1>持ち物</h1>
 
-    <div class="day">DAY1 - 8/1 (金)</div>
-    <div class="schedule">
-      <div class="time-block">
-        <span class="time">8:00</span>
-        <span class="activity">集合＆出発・筑波山登山</span>
-        <div class="note">→ つつじヶ丘駐車場に集合！<br>→ 登山スタート！山頂を目指そう！<br>→ 下山後はお昼ご飯♪</div>
-      </div>
-      <div class="time-block"><span class="time">12:00</span><span class="activity">昼食</span></div>
-      <div class="time-block"><span class="time">13:00</span><span class="activity">移動（大洗へ）</span></div>
-      <div class="time-block">
-        <span class="time">14:00</span>
-        <span class="activity">大洗シーサイドパーク</span>
-        <div class="note">→ 海で遊ぼう！</div>
-      </div>
-      <div class="time-block"><span class="time">16:00</span><span class="activity">宿へ移動</span></div>
-      <div class="time-block"><span class="time">16:30</span><span class="activity">チェックイン</span></div>
-      <div class="time-block"><span class="time">17:00</span><span class="activity">お風呂</span></div>
-      <div class="time-block"><span class="time">18:00</span><span class="activity">夕食</span></div>
-      <div class="time-block">
-        <span class="time">19:00</span>
-        <span class="activity">花火・星空観察</span>
-        <div class="note">→ 夏の夜を楽しもう！</div>
-      </div>
-      <div class="time-block"><span class="time">21:00</span><span class="activity">就寝</span></div>
-    </div>
-
-    <div class="day">DAY2 - 8/2 (土)</div>
-    <div class="schedule">
-      <div class="time-block"><span class="time">7:00</span><span class="activity">起床・朝のお散歩</span></div>
-      <div class="time-block"><span class="time">8:00</span><span class="activity">朝食</span></div>
-      <div class="time-block"><span class="time">9:00</span><span class="activity">海辺で自由時間</span></div>
-      <div class="time-block"><span class="time">11:00</span><span class="activity">チェックアウト</span></div>
-      <div class="time-block"><span class="time">12:00</span><span class="activity">昼食（地元グルメ）</span></div>
-      <div class="time-block"><span class="time">13:30</span><span class="activity">お土産タイム</span></div>
-      <div class="time-block"><span class="time">15:00</span><span class="activity">帰路へ</span></div>
-      <div class="time-block"><span class="time">17:00</span><span class="activity">解散</span></div>
-    </div>
+<div class="team-container">
+  <div class="team-card">
+    <form id="checklist-form">
+      <label><input type="checkbox" data-item="合宿費"> 合宿費（富士急ハイランド内で使う分のお金）</label>
+      <label><input type="checkbox" data-item="健康保険証"> 健康保険証（コピーでも可）</label>
+      <label><input type="checkbox" data-item="アレルギー報告書"> アレルギー報告書（アレルギー保持者のみ）</label>
+      <label><input type="checkbox" data-item="1日目の夜ご飯"> 1日目の夜ご飯</label>
+      <label><input type="checkbox" data-item="飲み物"> 飲み物</label>
+      <label><input type="checkbox" data-item="着替え"> 着替え（下着、靴下、服など）</label>
+      <label><input type="checkbox" data-item="寒さしのぎ"> 寒さしのぎ（東京よりも寒いです！）</label>
+      <label><input type="checkbox" data-item="タオル・バスタオル"> タオル・バスタオル</label>
+      <label><input type="checkbox" data-item="歯ブラシ"> 歯ブラシ</label>
+      <label><input type="checkbox" data-item="ドライヤー"> ドライヤー、ヘアアイロン etc.</label>
+      <label><input type="checkbox" data-item="メガネ・コンタクト"> メガネ・コンタクトレンズ（洗浄液）</label>
+      <label><input type="checkbox" data-item="洗面用品"> その他、洗面用品・整髪料・サニタリー用品など</label>
+      <label><input type="checkbox" data-item="ハンカチ・ティッシュ"> ハンカチ・ティッシュ</label>
+      <label><input type="checkbox" data-item="常備薬"> 常備薬</label>
+      <label><input type="checkbox" data-item="スマホ充電器"> スマホの充電器</label>
+      <label><input type="checkbox" data-item="モバイルバッテリー"> モバイルバッテリー</label>
+    </form>
   </div>
+</div>
+
+  <script>
+    const form = document.getElementById('checklist-form');
+    const checkboxes = form.querySelectorAll('input[type="checkbox"]');
+
+    // 初期化：保存された状態を復元
+    window.addEventListener('load', () => {
+      checkboxes.forEach(cb => {
+        const item = cb.getAttribute('data-item');
+        const saved = localStorage.getItem(`checklist-${item}`);
+        const label = cb.parentElement;
+        if (saved === 'checked') {
+          cb.checked = true;
+          label.classList.add('checked');
+        }
+      });
+      checkAllStatus();
+    });
+
+    // チェック状態変更時の処理
+    checkboxes.forEach(cb => {
+      cb.addEventListener('change', () => {
+        const item = cb.getAttribute('data-item');
+        const label = cb.parentElement;
+        if (cb.checked) {
+          localStorage.setItem(`checklist-${item}`, 'checked');
+          label.classList.add('checked');
+        } else {
+          localStorage.setItem(`checklist-${item}`, 'unchecked');
+          label.classList.remove('checked');
+        }
+        checkAllStatus();
+      });
+    });
+
+    
+  </script>
 </body>
 </html>
