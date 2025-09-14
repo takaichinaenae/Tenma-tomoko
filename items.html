@@ -32,15 +32,15 @@
   animation: fadeIn 0.6s ease-in-out;
   transition: transform 0.3s ease;
 }
-   body {
+  body {
   font-family: 'M PLUS Rounded 1c', sans-serif;
   margin: 0;
   padding: 40px;
   background-image: url('https://template.canva.com/EAGpRV1xDJg/1/0/640w-ZrWTf81wo0Y.jpg');
-  background-size: cover;
-  background-position: center;
-  background-attachment: fixed;
+  background-size: 400px auto; /* ← 画像の幅を指定して縮小 */
   background-repeat: no-repeat;
+  background-position: top center;
+  background-attachment: scroll; /* スクロールに合わせて動く */
 }
 h1 {
   color: #444;
