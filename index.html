@@ -33,6 +33,27 @@
   font-size: 100px;
   animation: drawText 3s ease forwards;
 }
+    .autumn-link {
+  font-family: 'Caveat', cursive;
+  font-size: 48px;
+  color: #FFFCBF;
+  text-decoration: none;
+  margin: 10px 0;
+  display: block;
+  text-align: center;
+  animation: fadeInUp 1.5s ease forwards 3s;
+  transition: color 0.3s ease;
+}
+    .link-group {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 40px;
+}
+
+.autumn-link:hover {
+  color: #ff9999;
+}
 /* 塗りつぶし用のアニメーション */
 @keyframes drawText {
   to {
@@ -97,11 +118,11 @@
   </text>
 
 </svg>
-  <div class="button-group">
-    <a href="schedule.html" class="nav-button">🍋 日程表</a>
-    <a href="items.html" class="nav-button">🥑 持ち物</a>
-    <a href="members.html" class="nav-button"> 🍊班分け</a>
-  </div>
+  <div class="link-group">
+  <a href="schedule.html" class="autumn-link">Schedule</a>
+  <a href="items.html" class="autumn-link">Item</a>
+  <a href="members.html" class="autumn-link">Member</a>
+</div>
   <script>
   // 3秒後に塗りつぶしを適用
   setTimeout(() => {
