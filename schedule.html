@@ -24,6 +24,62 @@
   animation: fadeInTitle 1.8s ease-out forwards;
 }
 
+    .timeline-wrapper {
+  position: relative;
+  padding-left: 80px;
+  margin-bottom: 40px;
+}
+
+.timeline-line {
+  position: absolute;
+  left: 40px;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background-color: #53ABC3;
+}
+
+.timeline-entry {
+  position: relative;
+  margin-bottom: 32px;
+  display: flex;
+  align-items: flex-start;
+}
+
+.timeline-dot {
+  position: absolute;
+  left: 34px;
+  width: 12px;
+  height: 12px;
+  background-color: #53ABC3;
+  border-radius: 50%;
+  z-index: 1;
+}
+
+.timeline-time {
+  width: 60px;
+  font-weight: bold;
+  color: #53ABC3;
+  font-size: 14px;
+  text-align: right;
+  margin-right: 16px;
+}
+
+.timeline-content {
+  flex: 1;
+}
+
+.timeline-content h3 {
+  margin: 0;
+  font-size: 16px;
+  color: #333;
+}
+
+.timeline-content p {
+  margin: 4px 0 0;
+  font-size: 14px;
+  color: #555;
+}
 @keyframes fadeInTitle {
   from {
     opacity: 0;
@@ -194,21 +250,162 @@
 
     <!-- 1日目 -->
     <div class="day-section" id="day1">
-      <div class="day">10月25日（土）</div>
-      <div class="timeline-item"><div class="timeline-time">10:00</div><div class="timeline-content"><h3>集合・受付</h3><p>キャンプ場入口にて受付を行います。</p></div></div>
-      <div class="timeline-item"><div class="timeline-time">11:00</div><div class="timeline-content"><h3>オリエンテーション</h3><p>班分けとルール説明。自己紹介もあります🌿</p></div></div>
-      <div class="timeline-item"><div class="timeline-time">12:00</div><div class="timeline-content"><h3>昼食</h3><p>お弁当タイム。自然の中でピクニック気分！</p></div></div>
-      <!-- 以下略 -->
+  <div class="day">10月25日（土）</div>
+  <div class="timeline-wrapper">
+    <div class="timeline-line"></div>
+
+    <div class="timeline-entry">
+      <div class="timeline-dot"></div>
+      <div class="timeline-time">8:00</div>
+      <div class="timeline-content">
+        <h3>集合 & 出発！</h3>
+        <p>目的地に移動。</p>
+      </div>
     </div>
 
-    <!-- 2日目 -->
-    <div class="day-section" id="day2">
-      <div class="day">10月26日（日）</div>
-      <div class="timeline-item"><div class="timeline-time">7:30</div><div class="timeline-content"><h3>朝食</h3><p>パンとスープでさわやかな朝を☀️</p></div></div>
-      <!-- 以下略 -->
+    <div class="timeline-entry">
+      <div class="timeline-dot"></div>
+      <div class="timeline-time">10:00</div>
+      <div class="timeline-content">
+        <h3>現地到着・観光開始</h3>
+        <p>写真たくさん撮って、思い出いっぱい残そう！</p>
+      </div>
     </div>
 
+    <div class="timeline-entry">
+      <div class="timeline-dot"></div>
+      <div class="timeline-time">11:00</div>
+      <div class="timeline-content">
+        <h3>観光スポット</h3>
+        <p>映えスポットでパシャリ！</p>
+      </div>
+    </div>
+
+    <div class="timeline-entry">
+      <div class="timeline-dot"></div>
+      <div class="timeline-time">12:00</div>
+      <div class="timeline-content">
+        <h3>昼食</h3>
+        <p>ご当地グルメを楽しむ</p>
+      </div>
+    </div>
+
+    <div class="timeline-entry">
+      <div class="timeline-dot"></div>
+      <div class="timeline-time">14:00</div>
+      <div class="timeline-content">
+        <h3>観光スポット</h3>
+        <p>神社・博物館・テーマパークなど</p>
+      </div>
+    </div>
+
+    <div class="timeline-entry">
+      <div class="timeline-dot"></div>
+      <div class="timeline-time">16:00</div>
+      <div class="timeline-content">
+        <h3>チェックイン</h3>
+        <p>宿に到着！荷物を置いてひと休み</p>
+      </div>
+    </div>
+
+    <div class="timeline-entry">
+      <div class="timeline-dot"></div>
+      <div class="timeline-time">17:00</div>
+      <div class="timeline-content">
+        <h3>自由時間・リフレッシュタイム</h3>
+        <p>温泉・おみやげ・お土産購入など</p>
+      </div>
+    </div>
+
+    <div class="timeline-entry">
+      <div class="timeline-dot"></div>
+      <div class="timeline-time">19:00</div>
+      <div class="timeline-content">
+        <h3>夕食・ホテルBBQ</h3>
+        <p>みんなで楽しくBBQ！</p>
+      </div>
+    </div>
+
+    <div class="timeline-entry">
+      <div class="timeline-dot"></div>
+      <div class="timeline-time">21:00</div>
+      <div class="timeline-content">
+        <h3>お部屋でごろごろ & おしゃべり</h3>
+        <p>修学旅行・青春パーティー</p>
+      </div>
+    </div>
+
+    <div class="timeline-entry">
+      <div class="timeline-dot"></div>
+      <div class="timeline-time">23:00</div>
+      <div class="timeline-content">
+        <h3>就寝（予定）</h3>
+        <p>※夜更かしはほどほどに。</p>
+      </div>
+    </div>
   </div>
+</div>
+
+<div class="day-section" id="day2">
+  <div class="day">10月26日（日）</div>
+  <div class="timeline-wrapper">
+    <div class="timeline-line"></div>
+
+    <div class="timeline-entry">
+      <div class="timeline-dot"></div>
+      <div class="timeline-time">7:30</div>
+      <div class="timeline-content">
+        <h3>朝食</h3>
+        <p>パンとスープでさわやかな朝を☀️</p>
+      </div>
+    </div>
+
+    <div class="timeline-entry">
+      <div class="timeline-dot"></div>
+      <div class="timeline-time">9:00</div>
+      <div class="timeline-content">
+        <h3>アクティビティ</h3>
+        <p>自然体験・クラフト・ゲームなど</p>
+      </div>
+    </div>
+
+    <div class="timeline-entry">
+      <div class="timeline-dot"></div>
+      <div class="timeline-time">11:30</div>
+      <div class="timeline-content">
+        <h3>昼食</h3>
+        <p>みんなでランチタイム🍙</p>
+      </div>
+    </div>
+
+    <div class="timeline-entry">
+      <div class="timeline-dot"></div>
+      <div class="timeline-time">13:00</div>
+      <div class="timeline-content">
+        <h3>片付け・荷物整理</h3>
+        <p>忘れ物チェック！</p>
+      </div>
+    </div>
+
+    <div class="timeline-entry">
+      <div class="timeline-dot"></div>
+      <div class="timeline-time">14:00</div>
+      <div class="timeline-content">
+        <h3>出発</h3>
+        <p>宿を出て帰路へ</p>
+      </div>
+    </div>
+
+    <div class="timeline-entry">
+      <div class="timeline-dot"></div>
+      <div class="timeline-time">16:00</div>
+      <div class="timeline-content">
+        <h3>到着・解散</h3>
+        <p>おつかれさまでした！また次回🌸</p>
+      </div>
+    </div>
+  </div>
+</div>
 
 </body>
 </html>
