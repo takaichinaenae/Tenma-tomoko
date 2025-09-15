@@ -5,6 +5,7 @@
   <title>旅のしおり</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Caveat&display=swap" rel="stylesheet">
   <style>
     body {
       background-color: #F9EFE6;
@@ -12,6 +13,26 @@
       margin: 0;
       padding: 0;
     }
+    .schedule-title {
+  font-family: 'Caveat', cursive;
+  font-size: 72px;
+  color: #FFFCBF;
+  text-align: center;
+  margin: 40px 0 20px;
+  opacity: 0;
+  animation: fadeInTitle 1.8s ease-out forwards;
+}
+
+@keyframes fadeInTitle {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
 
  .photo-scatter-vertical {
   display: flex;
