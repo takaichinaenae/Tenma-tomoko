@@ -5,141 +5,145 @@
   <title>持ち物チェック</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
+  <!-- ✅ フォントリンクは style タグの外に置く -->
+  <link href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Caveat&display=swap" rel="stylesheet">
+
   <style>
-    <link href="https://fonts.googleapis.com/css2?family=Caveat&display=swap" rel="stylesheet">
-.outer-frame {
-  background-color: #ff9999;
-  min-height: 100vh;
-  width: 100vw;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 40px;
-  box-sizing: border-box;
-}
-.inner-frame {
-  background-color: #F9EFE6; /* ベージュの内枠 */
-  padding: 40px;
-  border-radius: 12px;
-  width: 100%;
-  max-width: 800px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-}
+    body {
+      font-family: 'M PLUS Rounded 1c', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #F9EFE6;
+    }
+
+    .outer-frame {
+      background-color: #ff9999;
+      min-height: 100vh;
+      width: 100vw;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 40px;
+      box-sizing: border-box;
+    }
+
+    .inner-frame {
+      background-color: #F9EFE6;
+      padding: 40px;
+      border-radius: 12px;
+      width: 100%;
+      max-width: 800px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    }
+
     .item-title {
-  color: #ff9999;
-  font-family: 'Caveat', cursive;
-  font-size: 70px;
-  font-weight: normal;
-  letter-spacing: 2px;
-  margin-top: 0;
-  margin-bottom: 0;
-  line-height: 1;
-}
+      color: #ff9999;
+      font-family: 'Caveat', cursive;
+      font-size: 70px;
+      font-weight: normal;
+      letter-spacing: 2px;
+      margin-top: 0;
+      margin-bottom: 0;
+      line-height: 1;
+      text-align: center;
+    }
+
     .team-container {
-  display: grid;
-  grid-template-columns: 1fr;
-  max-width: 700px;
-  margin: 0 auto;
-  padding-bottom: 30px;
-}
+      display: grid;
+      grid-template-columns: 1fr;
+      max-width: 700px;
+      margin: 0 auto;
+      padding-bottom: 30px;
+    }
 
-.team-card {
-  padding: 20px;
-  background-color: transparent; /* 背景を透明に */
-  color: #2f4f4f;
-  box-shadow: none;              /* 影をなくす */
-  border: none;                  /* 枠線をなくす */
-  transition: none;              /* アニメーションも不要なら削除 */
-}
- body {
-  font-family: 'M PLUS Rounded 1c', sans-serif;
-  margin: 0;
-  padding: 0;
-  background-color: #F9EFE6;
- 
-}
-h1 {
-  color: #444;
-  text-align: center;
-  margin-bottom: 30px;
-}
+    .team-card {
+      padding: 20px;
+      background-color: transparent;
+      color: #2f4f4f;
+      box-shadow: none;
+      border: none;
+      transition: none;
+    }
 
-form#checklist-form {
-  display: grid;
-  grid-template-columns: 1fr 1fr; 
-  gap: 8px 20px;
-  max-width: 700px;
-  margin: 0 auto;
-}
+    form#checklist-form {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 8px 20px;
+      max-width: 700px;
+      margin: 0 auto;
+    }
 
-label {
-  font-size: 13px;
-  line-height: 1.4;
-  cursor: pointer;
-  padding: 4px 6px;
-  border-radius: 0;
-  transition: color 0.3s ease;
-  text-align: left;
-  background: none;
-  box-shadow: none;
-  display: -webkit-box;
-  -webkit-line-clamp: 3;           
-  -webkit-box-orient: vertical;
-  overflow: hidden;
-  word-break: break-word;
-}
+    label {
+      font-size: 13px;
+      line-height: 1.4;
+      cursor: pointer;
+      padding: 4px 6px;
+      border-radius: 0;
+      transition: color 0.3s ease;
+      text-align: left;
+      background: none;
+      box-shadow: none;
+      display: -webkit-box;
+      -webkit-line-clamp: 3;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+      word-break: break-word;
+    }
 
-label:hover {
-  color: #53ABC3;
-}
-input[type="checkbox"] {
-  margin-right: 6px;
-  transform: scale(1.1);
-  cursor: pointer;
-}
+    label:hover {
+      color: #53ABC3;
+    }
 
-label.checked {
-  color: #999;
-  text-decoration: line-through;
-}
-<link href="https://fonts.googleapis.com/css2?family=Caveat&display=swap" rel="stylesheet">    
+    input[type="checkbox"] {
+      margin-right: 6px;
+      transform: scale(1.1);
+      cursor: pointer;
+    }
+
+    label.checked {
+      color: #999;
+      text-decoration: line-through;
+    }
   </style>
 </head>
 <body>
-   <div class=".outer-frame">
+  <div class="outer-frame">
     <div class="inner-frame">
-
- <h1 class="item-title">Item</h1>
-
-  <div class="tag-background">
-  
-    
-<div class="team-container">
-  <div class="team-card">
-    <form id="checklist-form">
-      <label><input type="checkbox" data-item="合宿費"> 合宿費（富士急ハイランド内で使う分のお金）</label>
-      <label><input type="checkbox" data-item="健康保険証"> 健康保険証（コピーでも可）</label>
-      <label><input type="checkbox" data-item="アレルギー報告書"> アレルギー報告書（アレルギー保持者のみ）</label>
-      <label><input type="checkbox" data-item="1日目の夜ご飯"> 1日目の夜ご飯</label>
-      <label><input type="checkbox" data-item="飲み物"> 飲み物</label>
-      <label><input type="checkbox" data-item="着替え"> 着替え（下着、靴下、服など）</label>
-      <label><input type="checkbox" data-item="寒さしのぎ"> 寒さしのぎ（東京よりも寒いです！）</label>
-      <label><input type="checkbox" data-item="タオル・バスタオル"> タオル・バスタオル</label>
-      <label><input type="checkbox" data-item="歯ブラシ"> 歯ブラシ</label>
-      <label><input type="checkbox" data-item="ドライヤー"> ドライヤー、ヘアアイロン etc.</label>
-      <label><input type="checkbox" data-item="メガネ・コンタクト"> メガネ・コンタクトレンズ（洗浄液）</label>
-      <label><input type="checkbox" data-item="洗面用品"> その他、洗面用品・整髪料・サニタリー用品など</label>
-      <label><input type="checkbox" data-item="ハンカチ・ティッシュ"> ハンカチ・ティッシュ</label>
-      <label><input type="checkbox" data-item="常備薬"> 常備薬</label>
-      <label><input type="checkbox" data-item="スマホ充電器"> スマホの充電器</label>
-      <label><input type="checkbox" data-item="モバイルバッテリー"> モバイルバッテリー</label>
-    </form>
+      <h1 class="item-title">Item</h1>
+      <div class="team-container">
+        <div class="team-card">
+          <form id="checklist-form">
+            <label><input type="checkbox" data-item="合宿費"> 合宿費（富士急ハイランド内で使う分のお金）</label>
+            <label><input type="checkbox" data-item="健康保険証"> 健康保険証（コピーでも可）</label>
+            <label><input type="checkbox" data-item="アレルギー報告書"> アレルギー報告書（アレルギー保持者のみ）</label>
+            <label><input type="checkbox" data-item="1日目の夜ご飯"> 1日目の夜ご飯</label>
+            <label><input type="checkbox" data-item="飲み物"> 飲み物</label>
+            <label><input type="checkbox" data-item="着替え"> 着替え（下着、靴下、服など）</label>
+            <label><input type="checkbox" data-item="寒さしのぎ"> 寒さしのぎ（東京よりも寒いです！）</label>
+            <label><input type="checkbox" data-item="タオル・バスタオル"> タオル・バスタオル</label>
+            <label><input type="checkbox" data-item="歯ブラシ"> 歯ブラシ</label>
+            <label><input type="checkbox" data-item="ドライヤー"> ドライヤー、ヘアアイロン etc.</label>
+            <label><input type="checkbox" data-item="メガネ・コンタクト"> メガネ・コンタクトレンズ（洗浄液）</label>
+            <label><input type="checkbox" data-item="洗面用品"> その他、洗面用品・整髪料・サニタリー用品など</label>
+            <label><input type="checkbox" data-item="ハンカチ・ティッシュ"> ハンカチ・ティッシュ</label>
+            <label><input type="checkbox" data-item="常備薬"> 常備薬</label>
+            <label><input type="checkbox" data-item="スマホ充電器"> スマホの充電器</label>
+            <label><input type="checkbox" data-item="モバイルバッテリー"> モバイルバッテリー</label>
+          </form>
+        </div>
+      </div>
+    </div>
   </div>
-</div>
 
   <script>
     const form = document.getElementById('checklist-form');
     const checkboxes = form.querySelectorAll('input[type="checkbox"]');
+
+    // ✅ checkAllStatus 関数を定義（空でもOK）
+    function checkAllStatus() {
+      // 必要ならここに処理を追加
+    }
 
     // 初期化：保存された状態を復元
     window.addEventListener('load', () => {
@@ -170,8 +174,6 @@ label.checked {
         checkAllStatus();
       });
     });
-
-    
   </script>
 </body>
 </html>
