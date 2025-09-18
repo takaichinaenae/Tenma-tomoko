@@ -6,6 +6,44 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c&display=swap" rel="stylesheet">
   <style>
+    .tag-background {
+  background-color: #ff9999; /* ピンクの縁取り */
+  padding: 20px;
+  border-radius: 40px;
+  width: 300px;
+  margin: 40px auto;
+  position: relative;
+}
+
+.tag-inner {
+  background-color: white; /* 白い内側 */
+  border-radius: 30px;
+  padding: 40px 20px;
+  text-align: center;
+  position: relative;
+}
+
+.tag-text {
+  font-family: 'M PLUS Rounded 1c', sans-serif;
+  font-size: 18px;
+  color: #444;
+  margin: 0;
+}
+
+/* 上部の半円くり抜き風デザイン */
+.tag-inner::before {
+  content: '';
+  position: absolute;
+  top: -20px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 40px;
+  height: 20px;
+  background-color: #ff9999;
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+}
+
     .item-title {
   color: #ff9999;
   font-family: 'Caveat', cursive;
@@ -89,6 +127,9 @@ label.checked {
 <body>
  <h1 class="item-title">Item</h1>
 
+  <div class="tag-background">
+  <div class="tag-inner">
+    
 <div class="team-container">
   <div class="team-card">
     <form id="checklist-form">
