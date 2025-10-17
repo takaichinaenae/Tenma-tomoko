@@ -5,8 +5,6 @@
   <title>旅のしおり</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Gravitas+One&family=Playwrite+PE+Guides&display=swap" rel="stylesheet">
-  
   <style>
     body {
       background-color: #F9EFE6;
@@ -14,149 +12,26 @@
       margin: 0;
       padding: 0;
     }
+
     .schedule-title {
+      font-size: 72px;
+      color: #ff9999;
+      text-align: center;
+      margin: 40px 0 20px;
+      opacity: 0;
+      animation: fadeInTitle 1.8s ease-out forwards;
+    }
 
-  font-size: 72px;
-  color: #ff9999;
-  text-align: center;
-  margin: 40px 0 20px;
-  opacity: 0;
-  animation: fadeInTitle 1.8s ease-out forwards;
-}
-
-    .timeline-wrapper {
-  position: relative;
-  padding-left: 80px;
-  margin-bottom: 40px;
-}
-
-.timeline-line {
-  position: absolute;
-  left: 40px;
-  top: 0;
-  bottom: 0;
-  width: 2px;
-  background-color: #53ABC3;
-}
-
-.timeline-entry {
-  position: relative;
-  margin-bottom: 32px;
-  display: flex;
-  align-items: flex-start;
-}
-
-.timeline-dot {
-  position: absolute;
-  left: -45px;
-  width: 12px;
-  height: 12px;
-  background-color: #53ABC3;
-  border-radius: 50%;
-  z-index: 1;
-}
-
-.timeline-time {
-  width: 60px;
-  font-weight: bold;
-  color: #53ABC3;
-  font-size: 14px;
-  text-align: right;
-  margin-right: 16px;
-}
-
-.timeline-content {
-  flex: 1;
-}
-
-.timeline-content h3 {
-  margin: 0;
-  font-size: 16px;
-  color: #333;
-}
-
-.timeline-content p {
-  margin: 4px 0 0;
-  font-size: 14px;
-  color: #555;
-}
-@keyframes fadeInTitle {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
- .photo-scatter-vertical {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 14px;
-  margin: 28px auto;
-  max-width: 280px;
-  position: relative;
-}
-
-.photo-scatter-vertical img {
-  width: 75%;
-  max-width: 180px;
-  border-radius: 10px;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
-  transition: transform 0.3s ease;
-}
-
-
-
-@media screen and (max-width: 480px) {
-  .photo-scatter-vertical img {
-    width: 85%;
-    max-width: 160px;
-    margin-left: 0;
-    transform: none;
-  }
-}
-
-.photo-decor-wrapper {
-  position: relative;
-  width: fit-content;
-  margin: 0 auto 24px;
-}
-
-.main-photo {
-  width: 180px;
-  border-radius: 10px;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
-}
-
-.decor {
-  position: absolute;
-  width: 40px;
-  height: auto;
-  transition: transform 0.3s ease;
-}
-
-.decor1 { top: -20px; left: -20px; transform: rotate(-15deg); }
-.decor2 { top: 10px; right: -25px; transform: rotate(10deg); }
-.decor3 { bottom: -20px; left: 0px; transform: rotate(-5deg); }
-.decor4 { bottom: -10px; right: -20px; transform: rotate(8deg); }
-  
-}
-    .lodging-info {
-  text-align: center;
-  margin: 30px auto;
-}
-
-.lodging-info a {
-  font-size: 16px;
-  color: #3a6edc;
-  text-decoration: underline;
-  display: inline-block;
-  margin-bottom: 12px;
-}
+    @keyframes fadeInTitle {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
 
     .button-group {
       text-align: center;
@@ -174,7 +49,19 @@
       cursor: pointer;
     }
 
-    
+    .lodging-info {
+      text-align: center;
+      margin: 30px auto;
+    }
+
+    .lodging-info a {
+      font-size: 16px;
+      color: #3a6edc;
+      text-decoration: underline;
+      display: inline-block;
+      margin-bottom: 12px;
+    }
+
     .schedule-container {
       max-width: 600px;
       margin: 0 auto;
@@ -182,7 +69,7 @@
     }
 
     .day-section {
-      margin-bottom: 40px;
+      margin-bottom: 60px;
       padding-left: 16px;
     }
 
@@ -193,15 +80,51 @@
       margin-bottom: 16px;
     }
 
-    .timeline-item {
-      margin-bottom: 20px;
+    .timeline-wrapper {
+      position: relative;
+      padding-left: 80px;
+      margin-bottom: 40px;
+      overflow: hidden; /* ← ラインがはみ出さないように */
+    }
+
+    .timeline-line {
+      position: absolute;
+      left: 40px;
+      top: 0;
+      bottom: 0;
+      width: 2px;
+      background-color: #53ABC3;
+      z-index: 0;
+    }
+
+    .timeline-entry {
+      position: relative;
+      margin-bottom: 32px;
+      display: flex;
+      align-items: flex-start;
+    }
+
+    .timeline-dot {
+      position: absolute;
+      left: -45px;
+      width: 12px;
+      height: 12px;
+      background-color: #53ABC3;
+      border-radius: 50%;
+      z-index: 1;
     }
 
     .timeline-time {
+      width: 60px;
       font-weight: bold;
       color: #53ABC3;
       font-size: 14px;
-      margin-bottom: 4px;
+      text-align: right;
+      margin-right: 16px;
+    }
+
+    .timeline-content {
+      flex: 1;
     }
 
     .timeline-content h3 {
@@ -216,184 +139,134 @@
       color: #555;
     }
 
-    
-      html {
-  scroll-behavior: smooth;
-}
-   
+    html {
+      scroll-behavior: smooth;
+    }
   </style>
 </head>
 <body>
 
-  
-
-  
-
-  <!-- ボタン -->
   <h1 class="schedule-title">Schedule</h1>
+
   <div class="button-group">
     <a href="#day1" class="toggle-btn">DAY1</a>
     <a href="#day2" class="toggle-btn">DAY2</a>
   </div>
-  
-  <!-- 宿の詳細 -->
+
   <div class="lodging-info">
     <a href="http://kyoritsu.jp//宿のページ" target="_blank">宿の詳細はこちら</a>
   </div>
 
-  
-
-  <!-- スケジュール -->
-  
   <div class="schedule-container">
 
-    <!-- 1日目 -->
+    <!-- DAY 1 -->
     <div class="day-section" id="day1">
-  <div class="day">10月25日（土）</div>
-  <div class="timeline-wrapper">
-    <div class="timeline-line"></div>
+      <div class="day">10月25日（土）</div>
+      <div class="timeline-wrapper">
+        <div class="timeline-line"></div>
 
-    <div class="timeline-entry">
-      <div class="timeline-dot"></div>
-      <div class="timeline-time">7:20</div>
-      <div class="timeline-content">
-        <h3>バスタ新宿集合</h3>
-        <p>目的地に移動</p>
+        <div class="timeline-entry">
+          <div class="timeline-dot"></div>
+          <div class="timeline-time">7:20</div>
+          <div class="timeline-content">
+            <h3>バスタ新宿集合</h3>
+            <p>目的地に移動</p>
+          </div>
+        </div>
+
+        <div class="timeline-entry">
+          <div class="timeline-dot"></div>
+          <div class="timeline-time">7:45</div>
+          <div class="timeline-content">
+            <h3>出発</h3>
+          </div>
+        </div>
+
+        <div class="timeline-entry">
+          <div class="timeline-dot"></div>
+          <div class="timeline-time">10:10</div>
+          <div class="timeline-content">
+            <h3>バス停　山中湖平野　到着</h3>
+            <p>宿のバスに乗り換え</p>
+            <p>宿到着 昼ごはん＆テニス準備</p>
+          </div>
+        </div>
+
+        <div class="timeline-entry">
+          <div class="timeline-dot"></div>
+          <div class="timeline-time">11:30</div>
+          <div class="timeline-content">
+            <h3>テニス</h3>
+          </div>
+        </div>
+
+        <div class="timeline-entry">
+          <div class="timeline-dot"></div>
+          <div class="timeline-time">16:00</div>
+          <div class="timeline-content">
+            <h3>テニス終了</h3>
+            <p>夕食までに風呂に入ってください！</p>
+          </div>
+        </div>
+
+        <div class="timeline-entry">
+          <div class="timeline-dot"></div>
+          <div class="timeline-time">18:00</div>
+          <div class="timeline-content">
+            <h3>夕食</h3>
+          </div>
+        </div>
+
+        <div class="timeline-entry">
+          <div class="timeline-dot"></div>
+          <div class="timeline-time">20:00</div>
+          <div class="timeline-content">
+            <h3>宴会</h3>
+          </div>
+        </div>
       </div>
     </div>
 
-    <div class="timeline-entry">
-      <div class="timeline-dot"></div>
-      <div class="timeline-time">7:45</div>
-      <div class="timeline-content">
-        <h3>出発</h3>
-      </div>
-    </div>
-    
-    <div class="timeline-entry">
-      <div class="timeline-dot"></div>
-      <div class="timeline-time">10:10</div>
-      <div class="timeline-content">
-        <h3>バス停　山中湖平野　到着</h3>
-        <p>宿のバスに乗り換え</p>
-        <p>宿到着 昼ごはん＆テニス準備</p>
-      </div>
-    </div>
+    <!-- DAY 2 -->
+    <div class="day-section" id="day2">
+      <div class="day">10月26日（日）</div>
+      <div class="timeline-wrapper">
+        <div class="timeline-line"></div>
 
-    <div class="timeline-entry">
-      <div class="timeline-dot"></div>
-      <div class="timeline-time">11:30</div>
-      <div class="timeline-content">
-        <h3>テニス</h3>
-        <p></p>
-      </div>
-    </div>
+        <div class="timeline-entry">
+          <div class="timeline-dot"></div>
+          <div class="timeline-time">7:00</div>
+          <div class="timeline-content">
+            <h3>朝食</h3>
+          </div>
+        </div>
 
-    <div class="timeline-entry">
-      <div class="timeline-dot"></div>
-      <div class="timeline-time">16:00</div>
-      <div class="timeline-content">
-        <h3>テニス終了</h3>
-        <p>夕食までに風呂に入ってください！</p>
-      </div>
-    </div>
+        <div class="timeline-entry">
+          <div class="timeline-dot"></div>
+          <div class="timeline-time">8:30</div>
+          <div class="timeline-content">
+            <h3>宿出発</h3>
+            <p>宿の方に送ってもらう</p>
+          </div>
+        </div>
 
-    <div class="timeline-entry">
-      <div class="timeline-dot"></div>
-      <div class="timeline-time">18:00</div>
-      <div class="timeline-content">
-        <h3>夕食</h3>
-        <p></p>
-      </div>
-    </div>
+        <div class="timeline-entry">
+          <div class="timeline-dot"></div>
+          <div class="timeline-time">8:50</div>
+          <div class="timeline-content">
+            <h3>バス停　三国山ハイキングコース　発</h3>
+          </div>
+        </div>
 
-    <div class="timeline-entry">
-      <div class="timeline-dot"></div>
-      <div class="timeline-time">20:00</div>
-      <div class="timeline-content">
-        <h3>宴会</h3>
-        <p></p>
-      </div>
-    </div>
+        <div class="timeline-entry">
+          <div class="timeline-dot"></div>
+          <div class="timeline-time">10:06</div>
+          <div class="timeline-content">
+            <h3>富士急ハイランド　着</h3>
+            <p>荷物をコインロッカーへ！</p>
+          </div>
+        </div>
 
-    
-
-<div class="day-section" id="day2">
-  <div class="day">10月26日（日）</div>
-  <div class="timeline-wrapper">
-    <div class="timeline-line"></div>
-
-    <div class="timeline-entry">
-      <div class="timeline-dot"></div>
-      <div class="timeline-time">7:00</div>
-      <div class="timeline-content">
-        <h3>朝食</h3>
-        <p></p>
-      </div>
-    </div>
-
-    <div class="timeline-entry">
-      <div class="timeline-dot"></div>
-      <div class="timeline-time">8:30</div>
-      <div class="timeline-content">
-        <h3>宿出発</h3>
-        <p>宿の方に送ってもらう</p>
-      </div>
-    </div>
-
-    <div class="timeline-entry">
-      <div class="timeline-dot"></div>
-      <div class="timeline-time">8:50</div>
-      <div class="timeline-content">
-        <h3>バス停　三国山ハイキングコース　発</h3>
-        <p></p>
-      </div>
-    </div>
-
-    <div class="timeline-entry">
-      <div class="timeline-dot"></div>
-      <div class="timeline-time">10:06</div>
-      <div class="timeline-content">
-        <h3>富士急ハイランド　着</h3>
-        <p>荷物をコインロッカーへ！</p>
-      </div>
-    </div>
-
-    <div class="timeline-entry">
-      <div class="timeline-dot"></div>
-      <div class="timeline-time">10:30</div>
-      <div class="timeline-content">
-        <h3>富士急　班行動</h3>
-        <p></p>
-      </div>
-    </div>
-
-    <div class="timeline-entry">
-      <div class="timeline-dot"></div>
-      <div class="timeline-time">16:30</div>
-      <div class="timeline-content">
-        <h3>富士急入り口集合</h3>
-        <p></p>
-      </div>
-    </div>
-     <div class="timeline-entry">
-      <div class="timeline-dot"></div>
-      <div class="timeline-time">16:48</div>
-      <div class="timeline-content">
-        <h3>高速バス　富士急ハイランド発</h3>
-        <p></p>
-      </div>
-    </div>
-     <div class="timeline-entry">
-      <div class="timeline-dot"></div>
-      <div class="timeline-time">18:25</div>
-      <div class="timeline-content">
-        <h3>バスタ新宿　着　解散</h3>
-        <p></p>
-      </div>
-    </div>
-  </div>
-</div>
-
-</body>
-</html>
+        <div class="timeline-entry">
+          <div class="timeline-dot"></div>
+          <div class="timeline-time">
