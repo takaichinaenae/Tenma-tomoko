@@ -2,148 +2,144 @@
 <html lang="ja">
 <head>
   <meta charset="UTF-8">
-  <title></title>
+  <title>メンバー表</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c&display=swap" rel="stylesheet">
   <style>
     body {
-  font-family: 'Zen Maru Gothic', sans-serif;
-  margin: 0;
-  padding: 30px;
-  background-color: #fff8dc;
-
-  background-image: url('https://export-download.canva.com/pVeQE/DAGy8vpVeQE/3/0/0001-5623222363267136383.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAQYCGKMUH5AO7UJ26%2F20250914%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250914T072413Z&X-Amz-Expires=18866&X-Amz-Signature=98ceb35922edb49002641b58df031ebe584dcb457a8b23fbb3f4597bca0c8034&X-Amz-SignedHeaders=host&response-content-disposition=attachment%3B%20filename%2A%3DUTF-8%27%27%25E3%2583%2594%25E3%2583%25B3%25E3%2582%25AF%25E3%2580%2580%25E3%2583%2596%25E3%2583%25AB%25E3%2583%25BC%25E3%2580%2580%25E3%2583%25AC%25E3%2583%2588%25E3%2583%25AD%25E3%2580%2580%25E8%25A1%2597%25E6%25AD%25A9%25E3%2581%258D%25E3%2580%2580Instagram%25E3%2582%25B9%25E3%2583%2588%25E3%2583%25BC%25E3%2583%25AA%25E3%2583%25BC.png&response-expires=Sun%2C%2014%20Sep%202025%2012%3A38%3A39%20GMT');
-  background-repeat: no-repeat;
-  background-size: contain; /* ← 画像全体を表示！ */
-  background-position: center top;
-  background-attachment: fixed;
-}
-
+      background-color: #F9EFE6;
+      font-family: 'M PLUS Rounded 1c', sans-serif;
+      margin: 0;
+      padding: 20px;
+      text-align: center;
+    }
 
     h1 {
-      color: #2f4f4f;
-      text-align: center;
-      margin-bottom: 40px;
-      font-size: 28px;
+      font-size: 48px;
+      color: #ff9999;
+      margin-bottom: 20px;
     }
 
-    .team-container {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr); /* 常に2列表示 */
-  gap: 20px;
-  max-width: 800px;
-  margin: 0 auto;
-  overflow-y: auto;
-  padding-bottom: 30px;
-}
+    .button-group {
+      margin-bottom: 30px;
+    }
 
-    .team-card {
+    .toggle-btn {
+      background-color: #53ABC3;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      margin: 0 10px;
+      font-size: 16px;
+      border-radius: 20px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    .toggle-btn:hover {
+      background-color: #3a8ca8;
+    }
+
+    .member-section {
+      display: none;
+      max-width: 600px;
+      margin: 0 auto;
+      background-color: #fff;
+      border-radius: 12px;
       padding: 20px;
-      background-color: transparent; /* 背景を透明に */
-      color: #2f4f4f;
-      border: none;                  /* 枠線を削除 */
-      
-      
-      animation: fadeIn 0.6s ease-in-out;
-      transition: transform 0.3s ease;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
     }
 
-    .team-card:hover {
-      transform: scale(1.03);
+    .member-section.active {
+      display: block;
     }
 
-    .team-card h2 {
-      margin-top: 0;
+    .team-title {
       font-size: 20px;
-      border-bottom: 1px solid #ccc;
-      padding-bottom: 5px;
+      color: #53ABC3;
+      margin-top: 20px;
+      margin-bottom: 10px;
     }
 
     ul {
-      list-style-type: none;
-      padding-left: 0;
-      margin-top: 10px;
+      list-style: none;
+      padding: 0;
+      margin-bottom: 20px;
     }
 
     li {
-      margin: 6px 0;
       font-size: 16px;
+      color: #333;
+      margin: 4px 0;
     }
-
-    
-
-    @media (max-width: 600px) {
-      .team-card {
-        font-size: 14px;
-        padding: 15px;
-      }
-    }
-    .shift-right {
-  transform: translateX(30px); /* ← 右に10pxずらす */
-}
-    .shift-10 {
-  margin-top: -20px;
-}
-
-.shift-25 {
-  margin-top: -60px;
-}
   </style>
 </head>
 <body>
-  <h1>　</h1>
 
-  <div class="team-container">
-    <div class="team-card shift-right shift-10">
-     <h2>班1</h2>
-      <ul>
-        <li>山田 太郎</li>
-        <li>佐藤 花子</li>
-        <li>鈴木 一郎</li>
-        <li>田中 美咲</li>
-      </ul>
-    </div>
+  <h1>メンバー表</h1>
 
-    <div class="team-card shift-10">
-      <h2>班2</h2>
-      <ul>
-        <li>中村 健</li>
-        <li>高橋 優</li>
-        <li>小林 翼</li>
-        <li>加藤 未来</li>
-      </ul>
-    </div>
-
-    <div class="team-card shift-right shift-25">
-      <h2>班3</h2>
-      <ul>
-        <li>井上 陽</li>
-        <li>松本 彩</li>
-        <li>山口 海</li>
-        <li>石田 空</li>
-      </ul>
-    </div>
-
-    <div class="team-card shift-25">
-      <h2>班4</h2>
-      <ul>
-        <li>森田 光</li>
-        <li>藤田 涼</li>
-        <li>岡田 翔</li>
-        <li>島田 結</li>
-      </ul>
-    </div>
-
-    <div class="team-card shift-right shift-25">
-      <h2>班5</h2>
-      <ul>
-        <li>西村 陽子</li>
-        <li>大野 陸</li>
-        <li>村上 晴</li>
-        <li>青木 空</li>
-      </ul>
-    </div>
+  <div class="button-group">
+    <button class="toggle-btn" onclick="showSection('tennis')">テニスチーム</button>
+    <button class="toggle-btn" onclick="showSection('amusement')">遊園地チーム</button>
   </div>
+
+  <!-- テニスチーム -->
+  <div id="tennis" class="member-section active">
+    <div class="team-title">Aチーム（8名）</div>
+    <ul>
+      <li>春菜</li>
+      <li>美咲</li>
+      <li>翔太</li>
+      <li>健太</li>
+      <li>さくら</li>
+      <li>大地</li>
+      <li>優花</li>
+      <li>拓海</li>
+    </ul>
+
+    <div class="team-title">Bチーム（8名）</div>
+    <ul>
+      <li>莉子</li>
+      <li>悠人</li>
+      <li>真央</li>
+      <li>颯太</li>
+      <li>ひなた</li>
+      <li>涼介</li>
+      <li>結衣</li>
+      <li>海斗</li>
+    </ul>
+  </div>
+
+  <!-- 遊園地チーム -->
+  <div id="amusement" class="member-section">
+    <div class="team-title">グループA（5名）</div>
+    <ul>
+      <li>春菜</li>
+      <li>翔太</li>
+      <li>さくら</li>
+      <li>悠人</li>
+      <li>結衣</li>
+    </ul>
+
+    <div class="team-title">グループB（6名）</div>
+    <ul>
+      <li>美咲</li>
+      <li>健太</li>
+      <li>拓海</li>
+      <li>莉子</li>
+      <li>涼介</li>
+      <li>海斗</li>
+    </ul>
+  </div>
+
+  <script>
+    function showSection(id) {
+      document.querySelectorAll('.member-section').forEach(section => {
+        section.classList.remove('active');
+      });
+      document.getElementById(id).classList.add('active');
+    }
+  </script>
+
 </body>
 </html>
