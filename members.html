@@ -54,32 +54,28 @@
       display: block;
     }
 
-    .team-wrapper {
+    .team-row {
       display: flex;
-      justify-content: space-around;
+      justify-content: space-between;
+      gap: 40px;
       flex-wrap: wrap;
-      gap: 20px;
     }
 
-    .team-box {
-      flex: 1 1 250px;
-      background-color: #fff;
-      border-radius: 12px;
-      padding: 10px 20px;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    .team-column {
+      flex: 1 1 300px;
+      text-align: left;
     }
 
     .team-title {
       font-size: 20px;
       color: #53ABC3;
-      margin-top: 10px;
       margin-bottom: 10px;
     }
 
     ul {
       list-style: none;
       padding: 0;
-      margin-bottom: 10px;
+      margin-bottom: 20px;
     }
 
     li {
@@ -100,8 +96,8 @@
 
   <!-- テニスチーム -->
   <div id="tennis" class="member-section active">
-    <div class="team-wrapper">
-      <div class="team-box">
+    <div class="team-row">
+      <div class="team-column">
         <div class="team-title">Aチーム（8名）</div>
         <ul>
           <li>春菜</li>
@@ -114,7 +110,7 @@
           <li>拓海</li>
         </ul>
       </div>
-      <div class="team-box">
+      <div class="team-column">
         <div class="team-title">Bチーム（8名）</div>
         <ul>
           <li>莉子</li>
@@ -132,8 +128,8 @@
 
   <!-- 遊園地チーム -->
   <div id="amusement" class="member-section">
-    <div class="team-wrapper">
-      <div class="team-box">
+    <div class="team-row">
+      <div class="team-column">
         <div class="team-title">グループA（5名）</div>
         <ul>
           <li>春菜</li>
@@ -143,7 +139,7 @@
           <li>結衣</li>
         </ul>
       </div>
-      <div class="team-box">
+      <div class="team-column">
         <div class="team-title">グループB（6名）</div>
         <ul>
           <li>美咲</li>
