@@ -54,18 +54,15 @@
       display: block;
     }
 
-  .team-row {
+.team-row {
   display: flex;
-  flex-wrap: nowrap;
-  overflow-x: auto;
-  gap: 2px;               /* ← ほぼくっつく距離に */
-  padding-bottom: 10px;
-  justify-content: center;
+  justify-content: space-between;
+  gap: 8px;              /* ← チーム間の余白を最小限に */
+  flex-wrap: nowrap;     /* ← 折り返しなしで横並び固定 */
 }
 
 .team-column {
-  min-width: 180px;       /* ← さらにコンパクトに */
-  flex-shrink: 0;
+  width: 48%;            /* ← 画面幅の約半分ずつに固定 */
   text-align: left;
 }
     .team-title {
