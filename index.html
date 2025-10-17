@@ -181,6 +181,12 @@
   <a href="members.html" class="autumn-link">Member</a>
 </div>
   <script>
+  function togglePopup() {
+    const popup = document.getElementById('popup');
+    popup.style.display = (popup.style.display === 'block') ? 'none' : 'block';
+  }
+</script>
+  <script>
   // 3秒後に塗りつぶしを適用
   setTimeout(() => {
     const texts = document.querySelectorAll('.autumn-text');
