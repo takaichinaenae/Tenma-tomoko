@@ -54,21 +54,20 @@
       display: block;
     }
 
-   .team-row {
+  .team-row {
   display: flex;
   flex-wrap: nowrap;
   overflow-x: auto;
-  gap: 12px;           /* ← 距離を狭める（元は20px〜40px） */
+  gap: 4px;               /* ← ほぼくっつく距離に */
   padding-bottom: 10px;
-  justify-content: center; /* ← 中央寄せでバランスよく */
+  justify-content: center;
 }
 
 .team-column {
-  min-width: 220px;     /* ← 横幅を少し狭く（元は280px） */
+  min-width: 180px;       /* ← さらにコンパクトに */
   flex-shrink: 0;
   text-align: left;
 }
-
     .team-title {
       font-size: 20px;
       color: #53ABC3;
@@ -101,7 +100,7 @@
   <div id="tennis" class="member-section active">
     <div class="team-row">
       <div class="team-column">
-        <div class="team-title">Aチーム（8名）</div>
+        <div class="team-title">A</div>
         <ul>
           <li>春菜</li>
           <li>美咲</li>
@@ -114,7 +113,7 @@
         </ul>
       </div>
       <div class="team-column">
-        <div class="team-title">Bチーム（8名）</div>
+        <div class="team-title">B</div>
         <ul>
           <li>莉子</li>
           <li>悠人</li>
@@ -133,7 +132,7 @@
   <div id="amusement" class="member-section">
     <div class="team-row">
       <div class="team-column">
-        <div class="team-title">グループA（5名）</div>
+        <div class="team-title">A）</div>
         <ul>
           <li>春菜</li>
           <li>翔太</li>
@@ -143,7 +142,7 @@
         </ul>
       </div>
       <div class="team-column">
-        <div class="team-title">グループB（6名）</div>
+        <div class="team-title">B</div>
         <ul>
           <li>美咲</li>
           <li>健太</li>
