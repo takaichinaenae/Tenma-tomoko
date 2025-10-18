@@ -82,21 +82,21 @@
     }
 
     .timeline-wrapper {
-      position: relative;
-      padding-left: 80px;
-      margin-bottom: 40px;
-      overflow: hidden; 
-    }
+  position: relative;
+  padding-left: 60px; /* ← 80px → 60px に変更して右側の余白を広げる */
+  margin-bottom: 40px;
+  overflow: hidden;
+}
 
-    .timeline-line {
-      position: absolute;
-      left: 40px;
-      top: 0;
-      bottom: 0;
-      width: 2px;
-      background-color: #53ABC3;
-      z-index: 0;
-    }
+.timeline-line {
+  position: absolute;
+  left: 30px; /* ← 40px → 30px に変更してラインを左に寄せる */
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background-color: #53ABC3;
+  z-index: 0;
+}
 
     .timeline-entry {
       position: relative;
@@ -105,15 +105,16 @@
       align-items: flex-start;
     }
 
-    .timeline-dot {
-      position: absolute;
-      left: -45px;
-      width: 12px;
-      height: 12px;
-      background-color: #53ABC3;
-      border-radius: 50%;
-      z-index: 1;
-    }
+   .timeline-dot {
+  position: absolute;
+  left: -55px; /* ← -45px → -55px に変更してドットを左に寄せる */
+  width: 12px;
+  height: 12px;
+  background-color: #53ABC3;
+  border-radius: 50%;
+  z-index: 1;
+}
+
 
     .timeline-time {
       width: 60px;
