@@ -25,7 +25,7 @@
 
   .popup-box {
   position: absolute;
-  top: 38%; /* ← 位置をSVGの下に調整 */
+  top: 38%; /
   left: 12%;
   transform: none;
   background-color: rgba(255, 255, 255, 0.95);
@@ -90,8 +90,8 @@
 
     .link-group {
   position: absolute;
-  top: 60%;         /* ← 上からの位置（調整可能） */
-  left: 0;          /* ← 左端にぴったり寄せる */
+  top: 60%;         
+  left: 0;          
   padding-left: 12px;
 }
 
@@ -99,7 +99,7 @@
 .autumn-link:hover {
   color: #ff9999;
 }
-/* 塗りつぶし用のアニメーション */
+
 @keyframes drawText {
   to {
     stroke-dashoffset: 0;
@@ -156,7 +156,7 @@
   </style>
 </head>
 <body>
-  <!-- SVGで筆記体Autumnを一筆書き風に描画 -->
+  
  <svg viewBox="0 0 700 600" width="100%" height="500">
   <text x="50%" y="-15%" text-anchor="middle" dominant-baseline="middle"
       class="autumn-text line1" fill="none" stroke="#FFFCBF">
@@ -186,7 +186,7 @@
   }
 </script>
   <script>
-  // 3秒後に塗りつぶしを適用
+  
   setTimeout(() => {
     const texts = document.querySelectorAll('.autumn-text');
     texts.forEach(text => {
@@ -200,13 +200,13 @@
 <div id="popup" class="popup-box">
   <div class="popup-content">
     <span class="close-btn" onclick="togglePopup()">×</span>
-    <h3>重要ポイント</h3>
+    <h3>要点</h3>
     <ul>
       <li>集合 バスタ新宿　7:20（厳守）</li>
       <li>解散予定　18:25</li>
       <li>宿: <a href="http://kyoritsu.jp/" target="_blank">共立テニスロッヂ</a></li>
       <li>1日目のお昼は支給されないので各自持ってきてください！</li>
-      <li></li>
+      
     </ul>
   </div>
 </div>
