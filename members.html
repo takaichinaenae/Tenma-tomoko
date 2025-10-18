@@ -83,12 +83,24 @@
       color: #333;
       margin: 4px 0;
     }
-    .title {
+   .title {
   font-family: 'Playfair Display', serif;
   font-size: 64px;
   color: #ff9999;
   text-align: center;
   margin: 40px 0 20px;
+  opacity: 0;
+  animation: fadeInUp 1.8s ease-out forwards;
+}
+    @keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
   </style>
 </head>
