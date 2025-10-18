@@ -20,10 +20,11 @@
       font-family: 'Playfair Display', serif;
       font-size: 64px;
       color: #ff9999;
-      margin-bottom: 30px;
+      margin: 20px 0 10px; /* ← 上下の余白を縮小 */
       opacity: 0;
-      animation: fadeInUp 1.8s ease-out forwards;
+      animation: fadeInUp 1.2s ease-out forwards;
     }
+
 
     @keyframes fadeInUp {
       from {
@@ -68,11 +69,11 @@
       transform: scale(1.2);
     }
 
-    .note {
-      font-size: 13px;
-      color: #777;
-      margin-left: 28px;
-    }
+   .note {
+  font-size: 13px;
+  color: #777;
+  margin-left: 8px;
+}
   </style>
 </head>
 <body>
@@ -89,8 +90,10 @@
     <label><input type="checkbox">眼鏡・コンタクト</label>
     <label><input type="checkbox">日焼け止め</label>
     <label><input type="checkbox">ドライヤー</label>
-    <label><input type="checkbox">シャンプー・コンディショナー</label>
-    <div class="note">（備え付け有）</div>
+   <label>
+  <input type="checkbox">シャンプー・コンディショナー
+  <span class="note">（備え付け有）</span>
+</label>
     <label><input type="checkbox">洗顔料・メイク落とし・化粧品</label>
     <label><input type="checkbox">剃刀・髭剃り</label>
     <label><input type="checkbox">くし・整髪料・ヘアアイロン</label>
@@ -114,7 +117,8 @@
     <label><input type="checkbox">パジャマ</label>
     <label><input type="checkbox">スポーツウェア</label>
     <label><input type="checkbox">上着</label>
-    <div class="note">（寒さ対策）</div>
+    <span class="note">（寒さ対策）</span>
+</label>
     <label><input type="checkbox">バスタオル</label>
     <label><input type="checkbox">汗拭きタオル</label>
   </div>
