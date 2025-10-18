@@ -2,7 +2,7 @@
 <html lang="ja">
 <head>
   <meta charset="UTF-8">
-  <title>Item</title>
+  <title>Items</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <!-- フォント -->
   <link href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c&display=swap" rel="stylesheet">
@@ -16,15 +16,25 @@
       text-align: center;
     }
 
+    .container-box {
+      max-width: 700px;
+      margin: 0 auto;
+      background-color: #fff;
+      border-radius: 16px;
+      padding: 24px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      text-align: left;
+    }
+
     h1 {
       font-family: 'Playfair Display', serif;
-      font-size: 64px;
+      font-size: 48px;
       color: #ff9999;
-      margin: 20px 0 10px; /* ← 上下の余白を縮小 */
+      margin: 16px 0 12px;
+      text-align: center;
       opacity: 0;
       animation: fadeInUp 1.2s ease-out forwards;
     }
-
 
     @keyframes fadeInUp {
       from {
@@ -37,105 +47,92 @@
       }
     }
 
-    .item-section {
-      max-width: 600px;
-      margin: 0 auto 40px;
-      background-color: #fff;
-      border-radius: 12px;
-      padding: 20px;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-      text-align: left;
-    }
-
     .category-title {
       font-size: 20px;
       color: #53ABC3;
-      margin-bottom: 16px;
+      margin: 24px 0 12px;
       border-bottom: 1px solid #53ABC3;
       padding-bottom: 4px;
     }
 
-    .item-section label {
+    .checklist label {
       display: block;
       font-size: 16px;
       color: #333;
-      margin-bottom: 12px;
+      margin-bottom: 10px;
       cursor: pointer;
     }
 
-    .item-section input[type="checkbox"] {
+    .checklist input[type="checkbox"] {
       accent-color: #53ABC3;
       margin-right: 10px;
       transform: scale(1.2);
     }
 
-   .note {
-  font-size: 13px;
-  color: #777;
-  margin-left: 8px;
-}
+    .note {
+      font-size: 13px;
+      color: #777;
+      margin-left: 8px;
+    }
   </style>
 </head>
 <body>
 
-  <h1>Item</h1>
+  <div class="container-box">
+    <h1>Item</h1>
 
-  <!-- 日用品 -->
-  <div class="item-section">
-    <div class="category-title">日用品</div>
-    <label><input type="checkbox">歯ブラシ</label>
-    <label><input type="checkbox">ハンカチ</label>
-    <label><input type="checkbox">ティッシュ</label>
-    <label><input type="checkbox">汗拭きシート</label>
-    <label><input type="checkbox">眼鏡・コンタクト</label>
-    <label><input type="checkbox">日焼け止め</label>
-    <label><input type="checkbox">ドライヤー</label>
-   <label>
-  <input type="checkbox">シャンプー・コンディショナー
-  <span class="note">（備え付け有）</span>
-</label>
-    <label><input type="checkbox">洗顔料・メイク落とし・化粧品</label>
-    <label><input type="checkbox">剃刀・髭剃り</label>
-    <label><input type="checkbox">くし・整髪料・ヘアアイロン</label>
-    <label><input type="checkbox">生理用品</label>
-    <label><input type="checkbox">常備薬</label>
-  </div>
+    <div class="checklist">
 
-  <!-- 電子機器 -->
-  <div class="item-section">
-    <div class="category-title">電子機器</div>
-    <label><input type="checkbox">スマホ</label>
-    <label><input type="checkbox">充電器</label>
-    <label><input type="checkbox">モバイルバッテリー</label>
-  </div>
+      <!-- 日用品 -->
+      <div class="category-title">日用品</div>
+      <label><input type="checkbox">歯ブラシ</label>
+      <label><input type="checkbox">ハンカチ</label>
+      <label><input type="checkbox">ティッシュ</label>
+      <label><input type="checkbox">汗拭きシート</label>
+      <label><input type="checkbox">眼鏡・コンタクト</label>
+      <label><input type="checkbox">日焼け止め</label>
+      <label><input type="checkbox">ドライヤー</label>
+      <label>
+        <input type="checkbox">シャンプー・コンディショナー
+        <span class="note">（備え付け有）</span>
+      </label>
+      <label><input type="checkbox">洗顔料・メイク落とし・化粧品</label>
+      <label><input type="checkbox">剃刀・髭剃り</label>
+      <label><input type="checkbox">くし・整髪料・ヘアアイロン</label>
+      <label><input type="checkbox">生理用品</label>
+      <label><input type="checkbox">常備薬</label>
 
-  <!-- 衣類 -->
-  <div class="item-section">
-    <div class="category-title">衣類</div>
-    <label><input type="checkbox">着替え</label>
-    <label><input type="checkbox">下着・靴下</label>
-    <label><input type="checkbox">パジャマ</label>
-    <label><input type="checkbox">スポーツウェア</label>
-    <label><input type="checkbox">上着</label>
-    <span class="note">（寒さ対策）</span>
-</label>
-    <label><input type="checkbox">バスタオル</label>
-    <label><input type="checkbox">汗拭きタオル</label>
-  </div>
+      <!-- 電子機器 -->
+      <div class="category-title">電子機器</div>
+      <label><input type="checkbox">スマホ</label>
+      <label><input type="checkbox">充電器</label>
+      <label><input type="checkbox">モバイルバッテリー</label>
 
-  <!-- 貴重品 -->
-  <div class="item-section">
-    <div class="category-title">貴重品</div>
-    <label><input type="checkbox">財布</label>
-    <label><input type="checkbox">合宿費</label>
-    <label><input type="checkbox">富士急で使うお金</label>
-    <label><input type="checkbox">保険証</label>
-  </div>
+      <!-- 衣類 -->
+      <div class="category-title">衣類</div>
+      <label><input type="checkbox">着替え</label>
+      <label><input type="checkbox">下着・靴下</label>
+      <label><input type="checkbox">パジャマ</label>
+      <label><input type="checkbox">スポーツウェア</label>
+      <label>
+        <input type="checkbox">上着
+        <span class="note">（寒さ対策）</span>
+      </label>
+      <label><input type="checkbox">バスタオル</label>
+      <label><input type="checkbox">汗拭きタオル</label>
 
-  <!-- その他 -->
-  <div class="item-section">
-    <div class="category-title">その他</div>
-    <label><input type="checkbox">1日目のお昼</label>
+      <!-- 貴重品 -->
+      <div class="category-title">貴重品</div>
+      <label><input type="checkbox">財布</label>
+      <label><input type="checkbox">合宿費</label>
+      <label><input type="checkbox">富士急で使うお金</label>
+      <label><input type="checkbox">保険証</label>
+
+      <!-- その他 -->
+      <div class="category-title">その他</div>
+      <label><input type="checkbox">1日目のお昼</label>
+
+    </div>
   </div>
 
 </body>
